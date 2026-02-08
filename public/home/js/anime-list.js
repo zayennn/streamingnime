@@ -69,7 +69,6 @@ function initializeFilters() {
         }, 300);
     });
 
-    // Clear search button
     document.getElementById('clearSearch').addEventListener('click', function () {
         searchInput.value = '';
         currentState.search = '';
