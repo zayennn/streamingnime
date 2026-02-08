@@ -101,7 +101,7 @@ class HomeController extends Controller
             [
                 'rank' => 1,
                 'title' => 'Fullmetal Alchemist: Brotherhood',
-                'image' => 'https://via.placeholder.com/80x110/ff006e/ffffff?text=FMAB',
+                'image' => 'images/top rated/Fullmetal Alchemist Brotherhood.jpg',
                 'score' => 9.1,
                 'episodes' => 64,
                 'year' => 2009,
@@ -110,11 +110,20 @@ class HomeController extends Controller
             [
                 'rank' => 2,
                 'title' => 'Steins;Gate',
-                'image' => 'https://via.placeholder.com/80x110/8338ec/ffffff?text=SG',
+                'image' => 'images/top rated/Steins;Gate.jpg',
                 'score' => 9.0,
                 'episodes' => 24,
                 'year' => 2011,
                 'genres' => ['Sci-Fi', 'Thriller', 'Drama'],
+            ],
+            [
+                'rank' => 3,
+                'title' => 'Hunter x Hunter (2011)',
+                'image' => 'images/top rated/Hunter x Hunter (2011).jpg',
+                'score' => 9.0,
+                'episodes' => 148,
+                'year' => 2011,
+                'genres' => ['Action', 'Adventure', 'Fantasy'],
             ],
         ];
 
