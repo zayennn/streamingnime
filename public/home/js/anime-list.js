@@ -23,7 +23,6 @@ function initAnimeList(data) {
     document.getElementById('loadingSpinner').style.display = 'none';
 }
 
-// Initialize filter event listeners
 function initializeFilters() {
     document.querySelectorAll('.filter-btn').forEach(btn => {
         btn.addEventListener('click', function () {
