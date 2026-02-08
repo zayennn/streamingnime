@@ -8,9 +8,6 @@ class HomeController extends Controller
 {
     public function index()
     {
-        // ======================
-        // TRENDING
-        // ======================
         $trending = [
             [
                 'title' => 'Attack on Titan Final',
