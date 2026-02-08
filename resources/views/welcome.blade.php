@@ -107,7 +107,7 @@
 
     <!-- ==================== CONTENT DI BAWAH HERO ==================== -->
     <main class="main-content">
-        
+
         <!-- Section: Trending Now -->
         <section class="content-section">
             <div class="section-header">
@@ -117,122 +117,37 @@
                 <a href="/trending" class="view-all">View All</a>
             </div>
             <div class="anime-grid">
-                <!-- Anime Card 1 -->
-                <div class="anime-card">
-                    <div class="card-image">
-                        <img src="https://via.placeholder.com/300x400/ff006e/ffffff?text=Attack+on+Titan" alt="Attack on Titan">
-                        <div class="card-overlay">
-                            <span class="episode">S4 E28</span>
-                            <span class="rating">⭐ 9.0</span>
+                @foreach ($trending as $anime)
+                    <div class="anime-card">
+                        <div class="card-image">
+                            <img src="{{ $anime['image'] }}" alt="{{ $anime['title'] }}">
+
+                            <div class="card-overlay">
+                                <span class="episode">{{ $anime['episode'] }}</span>
+                                <span class="rating">⭐ {{ $anime['rating'] }}</span>
+                            </div>
+
+                            @if ($anime['badge'])
+                                <div class="card-badge">{{ $anime['badge'] }}</div>
+                            @endif
                         </div>
-                        <div class="card-badge">Hot</div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">Attack on Titan Final</h3>
-                        <div class="card-genres">
-                            <span>Action</span>
-                            <span>Drama</span>
-                            <span>Fantasy</span>
-                        </div>
-                        <div class="card-info">
-                            <span class="year">2023</span>
-                            <span class="type">TV</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Anime Card 2 -->
-                <div class="anime-card">
-                    <div class="card-image">
-                        <img src="https://via.placeholder.com/300x400/8338ec/ffffff?text=Jujutsu+Kaisen" alt="Jujutsu Kaisen">
-                        <div class="card-overlay">
-                            <span class="episode">S2 E23</span>
-                            <span class="rating">⭐ 8.8</span>
-                        </div>
-                        <div class="card-badge">New</div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">Jujutsu Kaisen S2</h3>
-                        <div class="card-genres">
-                            <span>Action</span>
-                            <span>Supernatural</span>
-                            <span>School</span>
-                        </div>
-                        <div class="card-info">
-                            <span class="year">2023</span>
-                            <span class="type">TV</span>
+
+                        <div class="card-content">
+                            <h3 class="card-title">{{ $anime['title'] }}</h3>
+
+                            <div class="card-genres">
+                                @foreach ($anime['genres'] as $genre)
+                                    <span>{{ $genre }}</span>
+                                @endforeach
+                            </div>
+
+                            <div class="card-info">
+                                <span class="year">{{ $anime['year'] }}</span>
+                                <span class="type">{{ $anime['type'] }}</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                
-                <!-- Anime Card 3 -->
-                <div class="anime-card">
-                    <div class="card-image">
-                        <img src="https://via.placeholder.com/300x400/3a86ff/ffffff?text=Chainsaw+Man" alt="Chainsaw Man">
-                        <div class="card-overlay">
-                            <span class="episode">S1 E12</span>
-                            <span class="rating">⭐ 8.5</span>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">Chainsaw Man</h3>
-                        <div class="card-genres">
-                            <span>Action</span>
-                            <span>Comedy</span>
-                            <span>Horror</span>
-                        </div>
-                        <div class="card-info">
-                            <span class="year">2022</span>
-                            <span class="type">TV</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Anime Card 4 -->
-                <div class="anime-card">
-                    <div class="card-image">
-                        <img src="https://via.placeholder.com/300x400/ff006e/ffffff?text=Spy+x+Family" alt="Spy x Family">
-                        <div class="card-overlay">
-                            <span class="episode">S2 E10</span>
-                            <span class="rating">⭐ 8.7</span>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">Spy x Family S2</h3>
-                        <div class="card-genres">
-                            <span>Action</span>
-                            <span>Comedy</span>
-                            <span>Slice of Life</span>
-                        </div>
-                        <div class="card-info">
-                            <span class="year">2023</span>
-                            <span class="type">TV</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Anime Card 5 -->
-                <div class="anime-card">
-                    <div class="card-image">
-                        <img src="https://via.placeholder.com/300x400/8338ec/ffffff?text=Blue+Lock" alt="Blue Lock">
-                        <div class="card-overlay">
-                            <span class="episode">S1 E24</span>
-                            <span class="rating">⭐ 8.3</span>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">Blue Lock</h3>
-                        <div class="card-genres">
-                            <span>Sports</span>
-                            <span>Psychological</span>
-                            <span>Shounen</span>
-                        </div>
-                        <div class="card-info">
-                            <span class="year">2022</span>
-                            <span class="type">TV</span>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </section>
 
@@ -259,7 +174,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Ongoing Item 2 -->
                 <div class="ongoing-item">
                     <div class="ongoing-image">
@@ -274,7 +189,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Ongoing Item 3 -->
                 <div class="ongoing-item">
                     <div class="ongoing-image">
@@ -289,7 +204,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Ongoing Item 4 -->
                 <div class="ongoing-item">
                     <div class="ongoing-image">
@@ -304,7 +219,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Ongoing Item 5 -->
                 <div class="ongoing-item">
                     <div class="ongoing-image">
@@ -352,7 +267,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Top Rated Item 2 -->
                 <div class="top-rated-item">
                     <span class="rank">2</span>
@@ -373,7 +288,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Top Rated Item 3 -->
                 <div class="top-rated-item">
                     <span class="rank">3</span>
@@ -409,7 +324,8 @@
                     <span class="genre-name">Action</span>
                     <span class="genre-count">1,234 Titles</span>
                 </a>
-                <a href="/genre/adventure" class="genre-card" style="background: linear-gradient(135deg, #8338ec, #9d5cff)">
+                <a href="/genre/adventure" class="genre-card"
+                    style="background: linear-gradient(135deg, #8338ec, #9d5cff)">
                     <span class="genre-name">Adventure</span>
                     <span class="genre-count">987 Titles</span>
                 </a>
@@ -421,11 +337,13 @@
                     <span class="genre-name">Drama</span>
                     <span class="genre-count">876 Titles</span>
                 </a>
-                <a href="/genre/fantasy" class="genre-card" style="background: linear-gradient(135deg, #8338ec, #3a86ff)">
+                <a href="/genre/fantasy" class="genre-card"
+                    style="background: linear-gradient(135deg, #8338ec, #3a86ff)">
                     <span class="genre-name">Fantasy</span>
                     <span class="genre-count">1,098 Titles</span>
                 </a>
-                <a href="/genre/romance" class="genre-card" style="background: linear-gradient(135deg, #ff006e, #ff4d94)">
+                <a href="/genre/romance" class="genre-card"
+                    style="background: linear-gradient(135deg, #ff006e, #ff4d94)">
                     <span class="genre-name">Romance</span>
                     <span class="genre-count">654 Titles</span>
                 </a>
@@ -433,7 +351,8 @@
                     <span class="genre-name">Sci-Fi</span>
                     <span class="genre-count">432 Titles</span>
                 </a>
-                <a href="/genre/slice-of-life" class="genre-card" style="background: linear-gradient(135deg, #8338ec, #ff006e)">
+                <a href="/genre/slice-of-life" class="genre-card"
+                    style="background: linear-gradient(135deg, #8338ec, #ff006e)">
                     <span class="genre-name">Slice of Life</span>
                     <span class="genre-count">543 Titles</span>
                 </a>
@@ -478,7 +397,7 @@
             card.addEventListener('mouseenter', function() {
                 this.style.transform = 'translateY(-10px)';
             });
-            
+
             card.addEventListener('mouseleave', function() {
                 this.style.transform = 'translateY(0)';
             });

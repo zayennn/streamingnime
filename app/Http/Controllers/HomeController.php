@@ -9,7 +9,7 @@ class HomeController extends Controller
         $trending = [
             [
                 'title' => 'Attack on Titan Final',
-                'image' => 'https://via.placeholder.com/300x400/ff006e/ffffff?text=Attack+on+Titan',
+                'image' => 'images/trending/Attack_on_Titan.jpg',
                 'episode' => 'S4 E28',
                 'rating' => 9.0,
                 'badge' => 'Hot',
@@ -19,7 +19,7 @@ class HomeController extends Controller
             ],
             [
                 'title' => 'Jujutsu Kaisen S2',
-                'image' => 'https://via.placeholder.com/300x400/8338ec/ffffff?text=Jujutsu+Kaisen',
+                'image' => 'images/trending/jjk.jpg',
                 'episode' => 'S2 E23',
                 'rating' => 8.8,
                 'badge' => 'New',
@@ -29,11 +29,31 @@ class HomeController extends Controller
             ],
             [
                 'title' => 'Chainsaw Man',
-                'image' => 'https://via.placeholder.com/300x400/3a86ff/ffffff?text=Chainsaw+Man',
+                'image' => 'images/trending/chainsawman.jpg',
                 'episode' => 'S1 E12',
                 'rating' => 8.5,
                 'badge' => null,
                 'genres' => ['Action', 'Comedy', 'Horror'],
+                'year' => 2022,
+                'type' => 'TV',
+            ],
+            [
+                'title' => 'Blue Lock',
+                'image' => 'images/trending/Blue Lock.jpg',
+                'episode' => 'S1 E24',
+                'rating' => 8.3,
+                'badge' => null,
+                'genres' => ['Action', 'Comedy', 'Slice of Life'],
+                'year' => 2023,
+                'type' => 'TV',
+            ],
+            [
+                'title' => 'Spy x Family S2',
+                'image' => 'images/trending/Spy x Family S2.jpg',
+                'episode' => 'S1 E12',
+                'rating' => 8.7,
+                'badge' => null,
+                'genres' => ['Action', 'Comedy', 'Slice of Life'],
                 'year' => 2022,
                 'type' => 'TV',
             ],
@@ -42,14 +62,14 @@ class HomeController extends Controller
         $ongoing = [
             [
                 'title' => 'One Piece',
-                'image' => 'https://via.placeholder.com/150x200/ff006e/ffffff?text=OP',
+                'image' => 'images/ongoing/one piece.jpg',
                 'episode' => 'Episode 1089',
                 'airing' => 'Airing Now',
                 'time' => 'Sundays',
             ],
             [
                 'title' => 'My Hero Academia S7',
-                'image' => 'https://via.placeholder.com/150x200/8338ec/ffffff?text=BNH',
+                'image' => 'images/ongoing/one piece.jpg',
                 'episode' => 'Episode 18',
                 'airing' => 'Airing Now',
                 'time' => 'Saturdays',
@@ -84,10 +104,8 @@ class HomeController extends Controller
             ],
         ];
 
-        return view('home.index', compact(
-            'trending',
-            'ongoing',
-            'topRated'
-        ));
+        return view('welcome', compact('trending', 'ongoing', 'topRated'), [
+            'page' => 'home'
+        ]);
     }
 }
