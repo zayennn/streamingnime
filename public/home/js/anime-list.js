@@ -244,11 +244,9 @@ function renderAnimeList() {
         });
     }
 
-    // Render pagination
     renderPagination(totalPages);
 }
 
-// Create anime card for grid view
 function createAnimeCard(anime) {
     const card = document.createElement('div');
     card.className = 'anime-card-grid';
