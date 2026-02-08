@@ -109,38 +109,50 @@ class HomeController extends Controller
         ];
 
         // ======================
-        // GENRE CONFIG (INI YANG LU MAU)
-        // CUMA ADA ACTION & ROMANCE
+        // GABUNG SEMUA DATA YANG PUNYA GENRE
         // ======================
-        $genresConfig = [
-            'Action' => [
-                'gradient' => 'linear-gradient(135deg, #ff006e, #ff4d94)',
-            ],
-            'Romance' => [
-                'gradient' => 'linear-gradient(135deg, #8338ec, #ff006e)',
-            ],
+        $allAnimeWithGenres = array_merge($trending, $topRated);
+
+        // ======================
+        // AUTO DETECT & COUNT GENRES
+        // ======================
+        $genreCounter = [];
+
+        foreach ($allAnimeWithGenres as $anime) {
+            foreach ($anime['genres'] as $genre) {
+                if (!isset($genreCounter[$genre])) {
+                    $genreCounter[$genre] = 0;
+                }
+                $genreCounter[$genre]++;
+            }
+        }
+
+        // ======================
+        // GRADIENT POOL (AUTO ROTATE)
+        // ======================
+        $gradients = [
+            'linear-gradient(135deg, #ff006e, #ff4d94)',
+            'linear-gradient(135deg, #8338ec, #9d5cff)',
+            'linear-gradient(135deg, #3a86ff, #5fa8ff)',
+            'linear-gradient(135deg, #ff006e, #8338ec)',
+            'linear-gradient(135deg, #8338ec, #3a86ff)',
+            'linear-gradient(135deg, #3a86ff, #ff006e)',
         ];
 
         // ======================
-        // HITUNG JUMLAH ANIME PER GENRE
+        // FINAL GENRE STATS
         // ======================
         $genreStats = [];
+        $i = 0;
 
-        foreach ($genresConfig as $genreName => $style) {
-            $count = 0;
-
-            foreach ($trending as $anime) {
-                if (in_array($genreName, $anime['genres'])) {
-                    $count++;
-                }
-            }
-
+        foreach ($genreCounter as $genreName => $count) {
             $genreStats[] = [
                 'name' => $genreName,
                 'slug' => Str::slug($genreName),
                 'count' => $count,
-                'gradient' => $style['gradient'],
+                'gradient' => $gradients[$i % count($gradients)],
             ];
+            $i++;
         }
 
         return view('welcome', compact(
