@@ -194,7 +194,7 @@ function filterAnime() {
             case 'newest':
                 return b.year - a.year;
             case 'popular':
-                return b.rating - a.rating; // Using rating as popularity for demo
+                return b.rating - a.rating; 
             default: // 'title'
                 return a.title.localeCompare(b.title);
         }
