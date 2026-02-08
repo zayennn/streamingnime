@@ -127,9 +127,6 @@ class HomeController extends Controller
             }
         }
 
-        // ======================
-        // GRADIENT POOL (AUTO ROTATE)
-        // ======================
         $gradients = [
             'linear-gradient(135deg, #ff006e, #ff4d94)',
             'linear-gradient(135deg, #8338ec, #9d5cff)',
