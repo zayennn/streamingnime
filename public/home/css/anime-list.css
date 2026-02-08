@@ -16,6 +16,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
+    padding-top: 80px;
 }
 
 .hero-overlay {
@@ -80,7 +81,7 @@
     background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    position: sticky;
+    position: static;
     top: 0;
     z-index: 100;
 }
