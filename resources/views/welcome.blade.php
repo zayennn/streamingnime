@@ -160,80 +160,22 @@
                 <a href="/ongoing" class="view-all">View All</a>
             </div>
             <div class="ongoing-grid">
-                <!-- Ongoing Item 1 -->
-                <div class="ongoing-item">
-                    <div class="ongoing-image">
-                        <img src="https://via.placeholder.com/150x200/ff006e/ffffff?text=OP" alt="One Piece">
-                    </div>
-                    <div class="ongoing-content">
-                        <h3 class="ongoing-title">One Piece</h3>
-                        <p class="ongoing-episode">Episode 1089</p>
-                        <div class="ongoing-info">
-                            <span class="airing">Airing Now</span>
-                            <span class="time">Sundays</span>
+                @foreach ($ongoing as $anime)
+                    <div class="ongoing-item">
+                        <div class="ongoing-image">
+                            <img src="{{ $anime['image'] }}" alt="{{ $anime['title'] }}">
                         </div>
-                    </div>
-                </div>
+                        <div class="ongoing-content">
+                            <h3 class="ongoing-title">{{ $anime['title'] }}</h3>
+                            <p class="ongoing-episode">{{ $anime['episode'] }}</p>
 
-                <!-- Ongoing Item 2 -->
-                <div class="ongoing-item">
-                    <div class="ongoing-image">
-                        <img src="https://via.placeholder.com/150x200/8338ec/ffffff?text=BNH" alt="My Hero Academia">
-                    </div>
-                    <div class="ongoing-content">
-                        <h3 class="ongoing-title">My Hero Academia S7</h3>
-                        <p class="ongoing-episode">Episode 18</p>
-                        <div class="ongoing-info">
-                            <span class="airing">Airing Now</span>
-                            <span class="time">Saturdays</span>
+                            <div class="ongoing-info">
+                                <span class="airing">{{ $anime['airing'] }}</span>
+                                <span class="time">{{ $anime['time'] }}</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <!-- Ongoing Item 3 -->
-                <div class="ongoing-item">
-                    <div class="ongoing-image">
-                        <img src="https://via.placeholder.com/150x200/3a86ff/ffffff?text=DS" alt="Demon Slayer">
-                    </div>
-                    <div class="ongoing-content">
-                        <h3 class="ongoing-title">Demon Slayer S4</h3>
-                        <p class="ongoing-episode">Episode 6</p>
-                        <div class="ongoing-info">
-                            <span class="airing">Airing Now</span>
-                            <span class="time">Sundays</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Ongoing Item 4 -->
-                <div class="ongoing-item">
-                    <div class="ongoing-image">
-                        <img src="https://via.placeholder.com/150x200/ff006e/ffffff?text=MK" alt="Mashle">
-                    </div>
-                    <div class="ongoing-content">
-                        <h3 class="ongoing-title">Mashle S2</h3>
-                        <p class="ongoing-episode">Episode 9</p>
-                        <div class="ongoing-info">
-                            <span class="airing">Airing Now</span>
-                            <span class="time">Fridays</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Ongoing Item 5 -->
-                <div class="ongoing-item">
-                    <div class="ongoing-image">
-                        <img src="https://via.placeholder.com/150x200/8338ec/ffffff?text=FC" alt="Frieren">
-                    </div>
-                    <div class="ongoing-content">
-                        <h3 class="ongoing-title">Frieren: Beyond Journey's End</h3>
-                        <p class="ongoing-episode">Episode 22</p>
-                        <div class="ongoing-info">
-                            <span class="airing">Airing Now</span>
-                            <span class="time">Fridays</span>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </section>
 
