@@ -10,7 +10,7 @@
     {{-- style --}}
     <link rel="stylesheet" href="{{ asset('home/css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('home/css/navbar.css') }}">
-    <link rel="stylesheet" href="{{ asset('home/css/hero.css') }}">
+    <link rel="stylesheet" href="{{ asset('home/css/styles.css') }}">
 
     {{-- poppins fonts --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
