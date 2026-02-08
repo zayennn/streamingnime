@@ -84,9 +84,16 @@ class HomeController extends Controller
             [
                 'title' => "Frieren: Beyond Journey's End",
                 'image' => 'images/ongoing/Frieren Beyond Journeys End.jpg',
-                'episode' => 'Episode 6',
+                'episode' => 'Episode 22',
                 'airing' => 'Airing Now',
-                'time' => 'Sundays',
+                'time' => 'Fridays',
+            ],
+            [
+                'title' => "Mashle S2",
+                'image' => 'images/ongoing/Mashle S2.jpg',
+                'episode' => 'Episode 9',
+                'airing' => 'Airing Now',
+                'time' => 'Fridays',
             ],
         ];
 
