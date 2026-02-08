@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scrollbar-width: thin;
+    scrollbar-color: #8338ec rgba(255, 255, 255, 0.08);
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(6px);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+        180deg,
+        #ff006e,
+        #8338ec,
+        #3a86ff
+    );
+    border-radius: 100px;
+    border: 2px solid rgba(0, 0, 0, 0.4);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(
+        180deg,
+        #ff4d94,
+        #9d5cff,
+        #5fa8ff
+    );
+}
+
+body {
+    font-family: 'poppins', Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgb(2, 0, 12);
+    color: white;
+    min-height: 200vh;
+}
