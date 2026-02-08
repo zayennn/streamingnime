@@ -52,7 +52,6 @@ hamburger.addEventListener("change", () => {
             navMenu.classList.add("active");
         }, 500); // nunggu overlay kelar
     } else {
-        // CLOSE
         navMenu.classList.remove("active");
 
         setTimeout(() => {
