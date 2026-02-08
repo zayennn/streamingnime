@@ -19,7 +19,6 @@ function initAnimeList(data) {
     animeData = data;
     initializeFilters();
     renderAnimeList();
-    // Hide loading spinner after initial render
     document.getElementById('loadingSpinner').style.display = 'none';
 }
 
