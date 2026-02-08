@@ -861,11 +861,9 @@ class HomeController extends Controller
         }
         sort($allGenres);
 
-        // Extract unique types for filter dropdown
         $allTypes = array_unique(array_column($animeData, 'type'));
         sort($allTypes);
 
-        // Extract unique statuses for filter dropdown
         $allStatuses = array_unique(array_column($animeData, 'status'));
         sort($allStatuses);
 
