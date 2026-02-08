@@ -474,7 +474,6 @@
             $('.paroller').paroller();
         });
 
-        // Anime card hover effects
         document.querySelectorAll('.anime-card').forEach(card => {
             card.addEventListener('mouseenter', function() {
                 this.style.transform = 'translateY(-10px)';
