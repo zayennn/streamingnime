@@ -145,16 +145,12 @@ function updateActiveFilterText() {
     titleElement.textContent = title;
 }
 
-// Filter anime based on current state
 function filterAnime() {
     return animeData.filter(anime => {
-        // Filter by alphabet
         if (currentState.filter !== 'all') {
             if (currentState.filter === '#') {
-                // Check if starts with number or symbol
                 const firstChar = anime.title.charAt(0);
                 if (!isNaN(firstChar) || ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '+', '=', '[', ']', '{', '}', '|', ';', ':', '"', ',', '.', '<', '>', '?', '/'].includes(firstChar)) {
-                    // Do nothing, matches
                 } else {
                     return false;
                 }
