@@ -40,9 +40,6 @@ links.forEach(link => {
 
 setDefaultByRoute();
 
-/* =========================
-   HAMBURGER SEQUENCE CONTROL
-========================= */
 hamburger.addEventListener("change", () => {
     if (hamburger.checked) {
         overlay.classList.add("active");
