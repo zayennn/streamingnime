@@ -411,7 +411,6 @@ function renderPagination(totalPages) {
         paginationContainer.appendChild(lastButton);
     }
 
-    // Next button
     const nextButton = document.createElement('button');
     nextButton.className = 'pagination-btn';
     nextButton.textContent = '→';
