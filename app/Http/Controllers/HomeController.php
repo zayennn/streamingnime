@@ -64,9 +64,6 @@ class HomeController extends Controller
             ],
         ];
 
-        // ======================
-        // ONGOING
-        // ======================
         $ongoing = [
             [
                 'title' => 'One Piece',
