@@ -82,7 +82,7 @@ class HomeController extends Controller
             [
                 'rank' => 1,
                 'title' => 'Fullmetal Alchemist: Brotherhood',
-                'image' => 'images/top-rated/fmab.jpg',
+                'image' => 'images/top-rated/Fullmetal Alchemist Brotherhood.jpg',
                 'score' => 9.1,
                 'episodes' => 64,
                 'year' => 2009,
