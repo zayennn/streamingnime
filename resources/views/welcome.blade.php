@@ -225,19 +225,77 @@
             </div>
 
             <div class="genres-grid">
-                @foreach ($genreStats as $genre)
-                    <a href="/genre/{{ $genre['slug'] }}" class="genre-card"
-                        style="background: {{ $genre['gradient'] }}">
+                @if (isset($genreStats) && count($genreStats) > 0)
+                    @foreach ($genreStats as $genre)
+                        <a href="/genre/{{ $genre['slug'] }}" class="genre-card"
+                            style="background: {{ $genre['gradient'] }}">
 
-                        <span class="genre-name">
-                            {{ $genre['name'] }}
-                        </span>
+                            <span class="genre-name">
+                                {{ $genre['name'] }}
+                            </span>
 
-                        <span class="genre-count">
-                            {{ $genre['count'] }} Titles
-                        </span>
-                    </a>
-                @endforeach
+                            <span class="genre-count">
+                                {{ $genre['count'] }} Titles
+                            </span>
+                        </a>
+                    @endforeach
+                @else
+                    <!-- Fallback genres if $genreStats is empty -->
+                    @php
+                        $fallbackGenres = [
+                            [
+                                'name' => 'Action',
+                                'slug' => 'action',
+                                'count' => 25,
+                                'gradient' => 'linear-gradient(135deg, #ff006e, #ff4d94)',
+                            ],
+                            [
+                                'name' => 'Adventure',
+                                'slug' => 'adventure',
+                                'count' => 18,
+                                'gradient' => 'linear-gradient(135deg, #8338ec, #9d5cff)',
+                            ],
+                            [
+                                'name' => 'Comedy',
+                                'slug' => 'comedy',
+                                'count' => 22,
+                                'gradient' => 'linear-gradient(135deg, #3a86ff, #5fa8ff)',
+                            ],
+                            [
+                                'name' => 'Drama',
+                                'slug' => 'drama',
+                                'count' => 15,
+                                'gradient' => 'linear-gradient(135deg, #ff006e, #8338ec)',
+                            ],
+                            [
+                                'name' => 'Fantasy',
+                                'slug' => 'fantasy',
+                                'count' => 20,
+                                'gradient' => 'linear-gradient(135deg, #8338ec, #3a86ff)',
+                            ],
+                            [
+                                'name' => 'Romance',
+                                'slug' => 'romance',
+                                'count' => 12,
+                                'gradient' => 'linear-gradient(135deg, #3a86ff, #ff006e)',
+                            ],
+                        ];
+                    @endphp
+
+                    @foreach ($fallbackGenres as $genre)
+                        <a href="/genre/{{ $genre['slug'] }}" class="genre-card"
+                            style="background: {{ $genre['gradient'] }}">
+
+                            <span class="genre-name">
+                                {{ $genre['name'] }}
+                            </span>
+
+                            <span class="genre-count">
+                                {{ $genre['count'] }} Titles
+                            </span>
+                        </a>
+                    @endforeach
+                @endif
             </div>
         </section>
     </main>
