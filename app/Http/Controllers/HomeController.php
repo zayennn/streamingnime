@@ -69,14 +69,21 @@ class HomeController extends Controller
             ],
             [
                 'title' => 'My Hero Academia S7',
-                'image' => 'images/ongoing/one piece.jpg',
+                'image' => 'images/ongoing/My Hero Academia S7.jpg',
                 'episode' => 'Episode 18',
                 'airing' => 'Airing Now',
                 'time' => 'Saturdays',
             ],
             [
                 'title' => 'Demon Slayer S4',
-                'image' => 'https://via.placeholder.com/150x200/3a86ff/ffffff?text=DS',
+                'image' => 'images/ongoing/Demon Slayer S4.jpg',
+                'episode' => 'Episode 6',
+                'airing' => 'Airing Now',
+                'time' => 'Sundays',
+            ],
+            [
+                'title' => 'Demon Slayer S4',
+                'image' => 'images/ongoing/Demon Slayer S4.jpg',
                 'episode' => 'Episode 6',
                 'airing' => 'Airing Now',
                 'time' => 'Sundays',
