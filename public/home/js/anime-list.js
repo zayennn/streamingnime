@@ -37,7 +37,6 @@ function initializeFilters() {
         });
     });
 
-    // Quick filter buttons
     document.querySelectorAll('.quick-filter-btn').forEach(btn => {
         btn.addEventListener('click', function () {
             const category = this.dataset.category;
