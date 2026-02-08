@@ -456,12 +456,10 @@ function resetFilters() {
 
     document.getElementById('animeResults').className = 'anime-results grid-view';
 
-    // Re-render
     renderAnimeList();
     updateActiveFilterText();
 }
 
-// Make functions available globally
 window.AnimeList = {
     init: initAnimeList,
     resetFilters: resetFilters,
