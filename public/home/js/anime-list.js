@@ -168,12 +168,10 @@ function filterAnime() {
             return false;
         }
 
-        // Filter by genre
         if (currentState.genre && !anime.genres.some(g => g.toLowerCase().includes(currentState.genre))) {
             return false;
         }
 
-        // Filter by type
         if (currentState.type && anime.type.toLowerCase() !== currentState.type) {
             return false;
         }
