@@ -84,9 +84,6 @@ class HomeController extends Controller
             ],
         ];
 
-        // ======================
-        // TOP RATED
-        // ======================
         $topRated = [
             [
                 'rank' => 1,
