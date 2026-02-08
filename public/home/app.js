@@ -14,7 +14,7 @@ function setDefaultByRoute() {
 
     defaultLink = [...links].find(link =>
         link.dataset.route === currentPath
-    ) || links[0]; // fallback Home
+    ) || links[0];
 
     moveLine(defaultLink);
 }
