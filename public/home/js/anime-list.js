@@ -77,7 +77,6 @@ function initializeFilters() {
         renderAnimeList();
     });
 
-    // Filter selects
     document.getElementById('genreFilter').addEventListener('change', function () {
         currentState.genre = this.value;
         currentState.currentPage = 1;
