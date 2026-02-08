@@ -113,9 +113,6 @@ class HomeController extends Controller
         // ======================
         $allAnimeWithGenres = array_merge($trending, $topRated);
 
-        // ======================
-        // AUTO DETECT & COUNT GENRES
-        // ======================
         $genreCounter = [];
 
         foreach ($allAnimeWithGenres as $anime) {
