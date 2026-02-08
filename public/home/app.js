@@ -45,7 +45,6 @@ setDefaultByRoute();
 ========================= */
 hamburger.addEventListener("change", () => {
     if (hamburger.checked) {
-        // OPEN
         overlay.classList.add("active");
 
         setTimeout(() => {
