@@ -49,7 +49,7 @@ hamburger.addEventListener("change", () => {
 
         setTimeout(() => {
             navMenu.classList.add("active");
-        }, 500); // nunggu overlay kelar
+        }, 500);
     } else {
         navMenu.classList.remove("active");
 
