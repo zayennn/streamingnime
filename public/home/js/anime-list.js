@@ -349,7 +349,6 @@ function renderPagination(totalPages) {
     });
     paginationContainer.appendChild(prevButton);
 
-    // Page buttons
     const maxVisiblePages = 5;
     let startPage = Math.max(1, currentState.currentPage - Math.floor(maxVisiblePages / 2));
     let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
@@ -358,7 +357,6 @@ function renderPagination(totalPages) {
         startPage = Math.max(1, endPage - maxVisiblePages + 1);
     }
 
-    // First page
     if (startPage > 1) {
         const firstButton = document.createElement('button');
         firstButton.className = 'pagination-btn';
