@@ -57,7 +57,6 @@ function initializeFilters() {
         });
     });
 
-    // Search input
     const searchInput = document.getElementById('animeSearch');
     let searchTimeout;
     searchInput.addEventListener('input', function () {
