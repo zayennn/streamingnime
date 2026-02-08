@@ -426,9 +426,7 @@ function renderPagination(totalPages) {
     paginationContainer.appendChild(nextButton);
 }
 
-// Reset all filters
 function resetFilters() {
-    // Reset state
     currentState = {
         filter: 'all',
         search: '',
