@@ -195,7 +195,7 @@ function filterAnime() {
                 return b.year - a.year;
             case 'popular':
                 return b.rating - a.rating; 
-            default: // 'title'
+            default:
                 return a.title.localeCompare(b.title);
         }
     });
