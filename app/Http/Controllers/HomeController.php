@@ -82,8 +82,8 @@ class HomeController extends Controller
                 'time' => 'Sundays',
             ],
             [
-                'title' => 'Demon Slayer S4',
-                'image' => 'images/ongoing/Demon Slayer S4.jpg',
+                'title' => "Frieren: Beyond Journey's End",
+                'image' => 'images/ongoing/Frieren Beyond Journeys End.jpg',
                 'episode' => 'Episode 6',
                 'airing' => 'Airing Now',
                 'time' => 'Sundays',
