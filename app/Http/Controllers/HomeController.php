@@ -139,9 +139,6 @@ class HomeController extends Controller
             'linear-gradient(135deg, #3a86ff, #ff006e)',
         ];
 
-        // ======================
-        // FINAL GENRE STATS
-        // ======================
         $genreStats = [];
         $i = 0;
 
