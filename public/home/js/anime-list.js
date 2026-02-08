@@ -1,7 +1,5 @@
-// Convert PHP data to JavaScript - Will be passed from Blade
 let animeData = [];
 
-// Application State
 let currentState = {
     filter: 'all',
     search: '',
