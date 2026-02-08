@@ -105,7 +105,6 @@
         </div>
     </section>
 
-    <!-- ==================== CONTENT DI BAWAH HERO ==================== -->
     <main class="main-content">
 
         <!-- Section: Trending Now -->
