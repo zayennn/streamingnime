@@ -9,6 +9,11 @@
     top: 0;
     left: 0;
     z-index: 1000;
+    transition: all 0.3s ease;
+}
+.navbar__container.scrolled {
+    background-color: rgb(2, 0, 12);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .brand {

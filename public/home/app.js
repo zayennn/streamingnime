@@ -1,8 +1,17 @@
+const navbar = document.querySelector(".navbar__container");
 const hamburger = document.getElementById("hamburger-toggle");
 const overlay = document.querySelector(".nav__overlay");
 const navMenu = document.querySelector(".nav__menu");
 const links = document.querySelectorAll(".nav__link[data-route]");
 const line = document.querySelector(".line__tracking");
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 200) {
+        navbar.classList.add("scrolled");
+    } else {
+        navbar.classList.remove("scrolled");
+    }
+})
 
 let defaultLink = null;
 
