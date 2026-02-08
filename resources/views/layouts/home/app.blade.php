@@ -10,6 +10,7 @@
     {{-- style --}}
     <link rel="stylesheet" href="{{ asset('home/css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('home/css/navbar.css') }}">
+    <link rel="stylesheet" href="{{ asset('home/css/footer.css') }}">
     <link rel="stylesheet" href="{{ asset('home/css/styles.css') }}">
 
     {{-- poppins fonts --}}
@@ -31,9 +32,10 @@
     {{-- navbar --}}
     @include('components.home.navbar')
 
-    {{-- content --}}
-
     @yield('content')
+
+    {{-- footer --}}
+    @include('components.home.footer')
 
     {{-- js --}}
     <script src="{{ asset('home/app.js') }}"></script>
