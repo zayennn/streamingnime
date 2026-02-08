@@ -328,14 +328,12 @@ function createAnimeListItem(anime) {
     return item;
 }
 
-// Render pagination
 function renderPagination(totalPages) {
     const paginationContainer = document.getElementById('pagination');
     paginationContainer.innerHTML = '';
 
     if (totalPages <= 1) return;
 
-    // Previous button
     const prevButton = document.createElement('button');
     prevButton.className = 'pagination-btn';
     prevButton.textContent = '←';
