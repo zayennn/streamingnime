@@ -108,9 +108,6 @@ class HomeController extends Controller
             ],
         ];
 
-        // ======================
-        // GABUNG SEMUA DATA YANG PUNYA GENRE
-        // ======================
         $allAnimeWithGenres = array_merge($trending, $topRated);
 
         $genreCounter = [];
