@@ -40,7 +40,10 @@
 
     {{-- js --}}
     <script src="{{ asset('home/js/app.js') }}"></script>
-    <script src="{{ asset('home/js/anime-list.js') }}"></script>
+    {{-- <script src="{{ asset('home/js/anime-list.js') }}"></script> --}}
+    @if(request()->is('anime*'))
+        <script src="{{ asset('home/js/anime-list.js') }}"></script>
+    @endif
 
     {{-- paroller js --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
