@@ -188,69 +188,31 @@
                 <a href="/top-rated" class="view-all">View All</a>
             </div>
             <div class="top-rated-list">
-                <!-- Top Rated Item 1 -->
-                <div class="top-rated-item">
-                    <span class="rank">1</span>
-                    <div class="top-rated-image">
-                        <img src="https://via.placeholder.com/80x110/ff006e/ffffff?text=FMAB" alt="Fullmetal Alchemist">
-                    </div>
-                    <div class="top-rated-content">
-                        <h3 class="top-rated-title">Fullmetal Alchemist: Brotherhood</h3>
-                        <div class="top-rated-info">
-                            <span class="score">⭐ 9.1</span>
-                            <span class="episodes">64 Episodes</span>
-                            <span class="year">2009</span>
-                        </div>
-                        <div class="top-rated-genres">
-                            <span>Action</span>
-                            <span>Adventure</span>
-                            <span>Drama</span>
-                            <span>Fantasy</span>
-                        </div>
-                    </div>
-                </div>
+                @foreach ($topRated as $anime)
+                    <div class="top-rated-item">
+                        <span class="rank">{{ $anime['rank'] }}</span>
 
-                <!-- Top Rated Item 2 -->
-                <div class="top-rated-item">
-                    <span class="rank">2</span>
-                    <div class="top-rated-image">
-                        <img src="https://via.placeholder.com/80x110/8338ec/ffffff?text=SG" alt="Steins;Gate">
-                    </div>
-                    <div class="top-rated-content">
-                        <h3 class="top-rated-title">Steins;Gate</h3>
-                        <div class="top-rated-info">
-                            <span class="score">⭐ 9.0</span>
-                            <span class="episodes">24 Episodes</span>
-                            <span class="year">2011</span>
+                        <div class="top-rated-image">
+                            <img src="{{ $anime['image'] }}" alt="{{ $anime['title'] }}">
                         </div>
-                        <div class="top-rated-genres">
-                            <span>Sci-Fi</span>
-                            <span>Thriller</span>
-                            <span>Drama</span>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Top Rated Item 3 -->
-                <div class="top-rated-item">
-                    <span class="rank">3</span>
-                    <div class="top-rated-image">
-                        <img src="https://via.placeholder.com/80x110/3a86ff/ffffff?text=HXH" alt="Hunter x Hunter">
-                    </div>
-                    <div class="top-rated-content">
-                        <h3 class="top-rated-title">Hunter x Hunter (2011)</h3>
-                        <div class="top-rated-info">
-                            <span class="score">⭐ 9.0</span>
-                            <span class="episodes">148 Episodes</span>
-                            <span class="year">2011</span>
-                        </div>
-                        <div class="top-rated-genres">
-                            <span>Action</span>
-                            <span>Adventure</span>
-                            <span>Fantasy</span>
+                        <div class="top-rated-content">
+                            <h3 class="top-rated-title">{{ $anime['title'] }}</h3>
+
+                            <div class="top-rated-info">
+                                <span class="score">⭐ {{ $anime['score'] }}</span>
+                                <span class="episodes">{{ $anime['episodes'] }} Episodes</span>
+                                <span class="year">{{ $anime['year'] }}</span>
+                            </div>
+
+                            <div class="top-rated-genres">
+                                @foreach ($anime['genres'] as $genre)
+                                    <span>{{ $genre }}</span>
+                                @endforeach
+                            </div>
                         </div>
                     </div>
-                </div>
+                @endforeach
             </div>
         </section>
 
