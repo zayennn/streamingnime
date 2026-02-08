@@ -41,7 +41,7 @@ class HomeController extends Controller
             ],
             [
                 'title' => 'Blue Lock',
-                'image' => 'images/trending/blue-lock.jpg',
+                'image' => 'images/trending/Blue Lock.jpg',
                 'episode' => 'S1 E24',
                 'rating' => 8.3,
                 'badge' => null,
@@ -51,7 +51,7 @@ class HomeController extends Controller
             ],
             [
                 'title' => 'Spy x Family S2',
-                'image' => 'images/trending/spy-family.jpg',
+                'image' => 'images/trending/Spy x Family S2.jpg',
                 'episode' => 'S2 E10',
                 'rating' => 8.7,
                 'badge' => null,
@@ -64,14 +64,14 @@ class HomeController extends Controller
         $ongoing = [
             [
                 'title' => 'One Piece',
-                'image' => 'images/ongoing/one-piece.jpg',
+                'image' => 'images/ongoing/one piece.jpg',
                 'episode' => 'Episode 1089',
                 'airing' => 'Airing Now',
                 'time' => 'Sundays',
             ],
             [
                 'title' => 'Mashle S2',
-                'image' => 'images/ongoing/mashle.jpg',
+                'image' => 'images/ongoing/Mashle S2.jpg',
                 'episode' => 'Episode 9',
                 'airing' => 'Airing Now',
                 'time' => 'Fridays',
@@ -82,7 +82,7 @@ class HomeController extends Controller
             [
                 'rank' => 1,
                 'title' => 'Fullmetal Alchemist: Brotherhood',
-                'image' => 'images/top-rated/Fullmetal Alchemist Brotherhood.jpg',
+                'image' => 'images/top rated/Fullmetal Alchemist Brotherhood.jpg',
                 'score' => 9.1,
                 'episodes' => 64,
                 'year' => 2009,
@@ -91,7 +91,7 @@ class HomeController extends Controller
             [
                 'rank' => 2,
                 'title' => 'Steins;Gate',
-                'image' => 'images/top-rated/Steins;Gate.jpg',
+                'image' => 'images/top rated/Steins;Gate.jpg',
                 'score' => 9.0,
                 'episodes' => 24,
                 'year' => 2011,
