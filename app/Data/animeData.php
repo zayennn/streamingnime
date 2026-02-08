@@ -123,8 +123,7 @@ return [
         'type' => 'TV',
         'status' => 'completed',
         'genres' => ['Action', 'Adventure', 'Fantasy'],
-        'image' => 'images/anime/Another.jpg',
-
+        'image' => 'images/anime/Akame ga Kill!.jpg',
         'badge' => null,
         'airing' => null,
         'time' => null,
@@ -142,7 +141,7 @@ return [
         'type' => 'TV',
         'status' => 'completed',
         'genres' => ['Action', 'Comedy', 'Drama'],
-        'image' => 'https://via.placeholder.com/300x400/8338ec/ffffff?text=Angel+Beats',
+        'image' => 'images/anime/Angel Beats!.jpg',
         'badge' => null,
         'airing' => null,
         'time' => null,
