@@ -223,43 +223,21 @@
                     <span class="title-gradient">Popular Genres</span>
                 </h2>
             </div>
+
             <div class="genres-grid">
-                <a href="/genre/action" class="genre-card" style="background: linear-gradient(135deg, #ff006e, #ff4d94)">
-                    <span class="genre-name">Action</span>
-                    <span class="genre-count">1,234 Titles</span>
-                </a>
-                <a href="/genre/adventure" class="genre-card"
-                    style="background: linear-gradient(135deg, #8338ec, #9d5cff)">
-                    <span class="genre-name">Adventure</span>
-                    <span class="genre-count">987 Titles</span>
-                </a>
-                <a href="/genre/comedy" class="genre-card" style="background: linear-gradient(135deg, #3a86ff, #5fa8ff)">
-                    <span class="genre-name">Comedy</span>
-                    <span class="genre-count">1,567 Titles</span>
-                </a>
-                <a href="/genre/drama" class="genre-card" style="background: linear-gradient(135deg, #ff006e, #8338ec)">
-                    <span class="genre-name">Drama</span>
-                    <span class="genre-count">876 Titles</span>
-                </a>
-                <a href="/genre/fantasy" class="genre-card"
-                    style="background: linear-gradient(135deg, #8338ec, #3a86ff)">
-                    <span class="genre-name">Fantasy</span>
-                    <span class="genre-count">1,098 Titles</span>
-                </a>
-                <a href="/genre/romance" class="genre-card"
-                    style="background: linear-gradient(135deg, #ff006e, #ff4d94)">
-                    <span class="genre-name">Romance</span>
-                    <span class="genre-count">654 Titles</span>
-                </a>
-                <a href="/genre/sci-fi" class="genre-card" style="background: linear-gradient(135deg, #3a86ff, #8338ec)">
-                    <span class="genre-name">Sci-Fi</span>
-                    <span class="genre-count">432 Titles</span>
-                </a>
-                <a href="/genre/slice-of-life" class="genre-card"
-                    style="background: linear-gradient(135deg, #8338ec, #ff006e)">
-                    <span class="genre-name">Slice of Life</span>
-                    <span class="genre-count">543 Titles</span>
-                </a>
+                @foreach ($genreStats as $genre)
+                    <a href="/genre/{{ $genre['slug'] }}" class="genre-card"
+                        style="background: {{ $genre['gradient'] }}">
+
+                        <span class="genre-name">
+                            {{ $genre['name'] }}
+                        </span>
+
+                        <span class="genre-count">
+                            {{ $genre['count'] }} Titles
+                        </span>
+                    </a>
+                @endforeach
             </div>
         </section>
     </main>
