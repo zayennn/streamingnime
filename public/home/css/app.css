@@ -4,6 +4,7 @@
     box-sizing: border-box;
     scrollbar-width: thin;
     scrollbar-color: #8338ec rgba(255, 255, 255, 0.08);
+    scroll-behavior: smooth;
 }
 
 ::-webkit-scrollbar {
