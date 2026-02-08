@@ -6,9 +6,6 @@ const line = document.querySelector(".line__tracking");
 
 let defaultLink = null;
 
-/* =========================
-   LINE TRACKING BY ROUTE
-========================= */
 function setDefaultByRoute() {
     const currentPath = window.location.pathname;
 
