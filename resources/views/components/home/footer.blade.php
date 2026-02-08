@@ -155,7 +155,7 @@
         <div class="footer-bottom">
             <div class="footer-bottom-content">
                 <div class="copyright">
-                    &copy; 2024 StreamingNime. All rights reserved.
+                    &copy; 2026 StreamingNime. All rights reserved.
                     <span class="disclaimer">
                         This site does not store any files on its server. All contents are provided by non-affiliated
                         third parties.
