@@ -102,7 +102,6 @@ function initializeFilters() {
         renderAnimeList();
     });
 
-    // View toggle buttons
     document.querySelectorAll('.view-btn').forEach(btn => {
         btn.addEventListener('click', function () {
             if (this.classList.contains('active')) return;
@@ -117,7 +116,6 @@ function initializeFilters() {
         });
     });
 
-    // Reset filters button
     document.getElementById('resetFilters').addEventListener('click', resetFilters);
 }
 
