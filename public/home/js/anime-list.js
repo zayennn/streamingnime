@@ -224,16 +224,13 @@ function renderAnimeList() {
         noResultsContainer.style.display = 'none';
     }
 
-    // Calculate pagination
     const totalPages = Math.ceil(filteredAnime.length / currentState.itemsPerPage);
     const startIndex = (currentState.currentPage - 1) * currentState.itemsPerPage;
     const endIndex = startIndex + currentState.itemsPerPage;
     const currentPageAnime = filteredAnime.slice(startIndex, endIndex);
 
-    // Clear previous results
     resultsContainer.innerHTML = '';
 
-    // Add anime items
     if (currentState.view === 'grid') {
         currentPageAnime.forEach(anime => {
             resultsContainer.appendChild(createAnimeCard(anime));
