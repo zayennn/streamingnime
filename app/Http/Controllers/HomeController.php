@@ -143,4 +143,11 @@ class HomeController extends Controller
             'page' => 'home',
         ]);
     }
+
+    public function animeList()
+    {
+        return view('anime-list', [
+            'page' => 'Anime List',
+        ]);
+    }
 }

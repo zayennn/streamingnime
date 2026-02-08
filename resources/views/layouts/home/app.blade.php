@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{{ asset('home/css/navbar.css') }}">
     <link rel="stylesheet" href="{{ asset('home/css/footer.css') }}">
     <link rel="stylesheet" href="{{ asset('home/css/styles.css') }}">
+    <link rel="stylesheet" href="{{ asset('home/css/anime-list.css') }}">
 
     {{-- poppins fonts --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
