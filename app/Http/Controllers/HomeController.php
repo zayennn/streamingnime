@@ -91,7 +91,7 @@ class HomeController extends Controller
             [
                 'rank' => 2,
                 'title' => 'Steins;Gate',
-                'image' => 'images/top-rated/steins-gate.jpg',
+                'image' => 'images/top-rated/Steins;Gate.jpg',
                 'score' => 9.0,
                 'episodes' => 24,
                 'year' => 2011,
