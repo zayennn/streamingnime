@@ -178,14 +178,12 @@ function filterAnime() {
             return false;
         }
 
-        // Filter by status
         if (currentState.status && anime.status !== currentState.status) {
             return false;
         }
 
         return true;
     }).sort((a, b) => {
-        // Sort by selected option
         switch (currentState.sort) {
             case 'title-desc':
                 return b.title.localeCompare(a.title);
