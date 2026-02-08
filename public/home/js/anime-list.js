@@ -163,7 +163,6 @@ function filterAnime() {
             }
         }
 
-        // Filter by search
         if (currentState.search && !anime.title.toLowerCase().includes(currentState.search)) {
             return false;
         }
