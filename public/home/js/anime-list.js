@@ -41,7 +41,6 @@ function initializeFilters() {
     document.querySelectorAll('.quick-filter-btn').forEach(btn => {
         btn.addEventListener('click', function () {
             const category = this.dataset.category;
-            // Reset other filters
             document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
             document.querySelector('.filter-btn[data-filter="all"]').classList.add('active');
 
