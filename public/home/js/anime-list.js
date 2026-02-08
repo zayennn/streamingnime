@@ -441,7 +441,6 @@ function resetFilters() {
         itemsPerPage: 24
     };
 
-    // Reset UI
     document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
     document.querySelector('.filter-btn[data-filter="all"]').classList.add('active');
 
