@@ -27,7 +27,6 @@ function moveLine(el) {
     line.style.left = `${rect.left - parentRect.left}px`;
 }
 
-/* hover effect */
 links.forEach(link => {
     link.addEventListener("mouseenter", () => {
         moveLine(link);
