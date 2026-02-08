@@ -378,7 +378,6 @@ function renderPagination(totalPages) {
         }
     }
 
-    // Numbered pages
     for (let i = startPage; i <= endPage; i++) {
         const pageButton = document.createElement('button');
         pageButton.className = `pagination-btn ${i === currentState.currentPage ? 'active' : ''}`;
@@ -391,7 +390,6 @@ function renderPagination(totalPages) {
         paginationContainer.appendChild(pageButton);
     }
 
-    // Last page
     if (endPage < totalPages) {
         if (endPage < totalPages - 1) {
             const dots = document.createElement('span');
