@@ -121,7 +121,6 @@ function initializeFilters() {
     document.getElementById('resetFilters').addEventListener('click', resetFilters);
 }
 
-// Update active filter text
 function updateActiveFilterText() {
     const titleElement = document.getElementById('activeFilter');
     let title = '';
