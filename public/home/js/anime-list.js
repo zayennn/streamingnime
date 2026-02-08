@@ -14,7 +14,6 @@ let currentState = {
     itemsPerPage: 24
 };
 
-// Initialize
 function initAnimeList(data) {
     animeData = data;
     initializeFilters();
