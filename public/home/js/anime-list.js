@@ -280,14 +280,12 @@ function createAnimeCard(anime) {
     `;
 
     card.addEventListener('click', function () {
-        // Navigate to anime detail page (placeholder)
         alert(`Loading ${anime.title}...`);
     });
 
     return card;
 }
 
-// Create anime item for list view
 function createAnimeListItem(anime) {
     const item = document.createElement('div');
     item.className = 'anime-item-list';
