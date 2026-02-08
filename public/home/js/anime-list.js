@@ -201,7 +201,6 @@ function filterAnime() {
     });
 }
 
-// Render anime list
 function renderAnimeList() {
     const filteredAnime = filterAnime();
     const resultsContainer = document.getElementById('animeResults');
@@ -209,10 +208,8 @@ function renderAnimeList() {
     const noResultsContainer = document.getElementById('noResults');
     const animeCountElement = document.getElementById('animeCount');
 
-    // Update count
     animeCountElement.textContent = `${filteredAnime.length} Anime Found`;
 
-    // Show/hide no results message
     if (filteredAnime.length === 0) {
         resultsContainer.style.display = 'none';
         paginationContainer.style.display = 'none';
