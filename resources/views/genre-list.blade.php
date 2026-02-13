@@ -203,7 +203,7 @@
                         case 'name-desc':
                             return nameB.localeCompare(nameA);
                         case 'popular':
-                            return countB - countA; // Most popular (by count)
+                            return countB - countA;
                         case 'count':
                             return countB - countA; // Most anime
                         default:
