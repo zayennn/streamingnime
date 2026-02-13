@@ -75,3 +75,12 @@ hamburger.addEventListener("change", () => {
         }, 400);
     }
 });
+
+function updateNavbarHeight() {
+    const height = navbar.offsetHeight;
+    document.documentElement.style.setProperty("--navbar-height", height + "px");
+}
+
+updateNavbarHeight();
+window.addEventListener("resize", updateNavbarHeight);
+window.addEventListener("scroll", updateNavbarHeight);
