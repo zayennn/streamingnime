@@ -267,7 +267,6 @@
                 });
             });
 
-            // Add click event to anime cards
             animeCards.forEach(card => {
                 card.addEventListener('click', function() {
                     const title = this.querySelector('.card-title').textContent;
