@@ -253,7 +253,6 @@
                 });
             }
 
-            // Event listeners
             if (searchInput) {
                 searchInput.addEventListener('input', filterAnime);
             }
