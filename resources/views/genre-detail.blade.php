@@ -240,7 +240,6 @@
                 });
             }
 
-            // View toggle functionality
             function toggleView(view) {
                 currentView = view;
                 animeResults.className = `anime-results ${view}-view`;
