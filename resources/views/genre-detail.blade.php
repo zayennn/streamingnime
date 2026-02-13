@@ -207,7 +207,6 @@
                 }
             }
 
-            // Sort functionality
             function sortAnime() {
                 const cardsArray = Array.from(animeCards);
                 const sortBy = sortSelect.value;
