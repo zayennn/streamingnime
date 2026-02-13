@@ -235,7 +235,6 @@
                     }
                 });
 
-                // Reorder DOM elements
                 cardsArray.forEach(card => {
                     animeResults.appendChild(card);
                 });
