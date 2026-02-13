@@ -4,7 +4,7 @@
     <div class="genre-list-container">
         <!-- Hero Section -->
         <section class="genre-hero">
-            <div class="hero-content">
+            <div class="hero-content-wrapper">
                 <h1 class="hero-title">Genre List</h1>
                 <p class="hero-subtitle">Browse anime by genre and find your next favorite series</p>
                 <div class="hero-stats">

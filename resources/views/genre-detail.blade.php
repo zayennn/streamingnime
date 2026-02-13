@@ -4,7 +4,7 @@
     <div class="genre-detail-container">
         <!-- Genre Hero -->
         <section class="genre-detail-hero">
-            <div class="hero-content">
+            <div class="hero-content-wrapper">
                 <h1 class="hero-title">{{ $genreName }}</h1>
                 <p class="hero-subtitle">Discover the best {{ $genreName }} anime series and movies</p>
                 <div class="hero-stats">
@@ -98,7 +98,7 @@
                         data-rating="{{ $anime['rating'] }}" data-year="{{ $anime['year'] }}"
                         data-episodes="{{ $anime['episodes'] }}">
                         <div class="card-image">
-                            {{-- <img src="{{ $anime['image'] }}" alt="{{ $anime['title'] }}" loading="lazy"> --}}
+                            <img src="{{ $anime['image'] }}" alt="{{ $anime['title'] }}" loading="lazy">
                             <img src="{{ asset($anime['image']) }}" alt="{{ $anime['title'] }}" loading="lazy">
                             <div class="card-badge badge-{{ $anime['status'] }}">
                                 {{ $anime['status'] === 'airing' ? 'Ongoing' : ($anime['status'] === 'completed' ? 'Completed' : 'Upcoming') }}

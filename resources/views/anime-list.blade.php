@@ -4,7 +4,7 @@
     <div class="anime-list-container">
         <!-- Hero Section Anime List -->
         <section class="anime-list-hero">
-            <div class="hero-content">
+            <div class="hero-content-wrapper">
                 <h1 class="hero-title">Anime Library</h1>
                 <p class="hero-subtitle">Browse through our complete collection of anime titles</p>
                 <div class="hero-stats">
