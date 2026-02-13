@@ -163,7 +163,6 @@
             let currentView = 'grid';
             let currentSort = 'name';
 
-            // Search functionality
             function filterGenres() {
                 const searchTerm = searchInput.value.toLowerCase().trim();
                 let visibleCount = 0;
