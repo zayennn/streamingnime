@@ -22,7 +22,7 @@
 
 .genre-detail-hero {
     background: linear-gradient(135deg, rgba(255, 0, 110, 0.3), rgba(131, 56, 236, 0.3), rgba(58, 134, 255, 0.3)),
-        url('https://images.unsplash.com/photo-1578632767115-351597cf2477?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+        url('/images/slider hero/jigokuraku.jpg');
 }
 
 .hero-overlay {
