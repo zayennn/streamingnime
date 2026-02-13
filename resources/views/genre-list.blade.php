@@ -205,7 +205,7 @@
                         case 'popular':
                             return countB - countA;
                         case 'count':
-                            return countB - countA; // Most anime
+                            return countB - countA;
                         default:
                             return 0;
                     }
