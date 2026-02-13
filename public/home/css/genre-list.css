@@ -570,7 +570,7 @@
 
     .hero-stats {
         gap: 1.5rem;
-        flex-direction: column;
+        /* flex-direction: column; */
     }
 
     .list-header {
@@ -623,6 +623,11 @@
 
     .other-genres-grid {
         grid-template-columns: 1fr;
+    }
+
+    .hero-stats {
+        gap: 1rem;
+        flex-direction: row;
     }
 }
 
