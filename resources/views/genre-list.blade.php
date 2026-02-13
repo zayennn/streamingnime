@@ -188,7 +188,6 @@
                 }
             }
 
-            // Sort functionality
             function sortGenres() {
                 const cardsArray = Array.from(genreCards);
 
