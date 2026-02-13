@@ -16,11 +16,26 @@ window.addEventListener('scroll', () => {
 let defaultLink = null;
 
 function setDefaultByRoute() {
-    const currentPath = window.location.pathname;
+    const currentPath = window.location.pathname
+        .replace(/\/+$/, "")
+        .toLowerCase();
 
-    defaultLink = [...links].find(link =>
-        link.dataset.route === currentPath
-    ) || links[0];
+    defaultLink = null;
+
+    links.forEach(link => {
+        const route = (link.dataset.route || "")
+            .replace(window.location.origin, "")
+            .replace(/\/+$/, "")
+            .toLowerCase();
+
+        console.log("COMPARE:", currentPath, "vs", route);
+
+        if (route && currentPath.startsWith(route)) {
+            defaultLink = link;
+        }
+    });
+
+    if (!defaultLink) defaultLink = links[0];
 
     moveLine(defaultLink);
 }
