@@ -184,7 +184,6 @@
 
             let currentView = 'grid';
 
-            // Search functionality
             function filterAnime() {
                 const searchTerm = searchInput.value.toLowerCase().trim();
                 let visibleCount = 0;
