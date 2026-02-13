@@ -12,6 +12,7 @@
     transition: all 0.3s ease;
 }
 .navbar__container.scrolled {
+    padding: 2rem 3rem;
     background-color: rgb(2, 0, 12);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
