@@ -98,7 +98,8 @@
                         data-rating="{{ $anime['rating'] }}" data-year="{{ $anime['year'] }}"
                         data-episodes="{{ $anime['episodes'] }}">
                         <div class="card-image">
-                            <img src="{{ $anime['image'] }}" alt="{{ $anime['title'] }}" loading="lazy">
+                            {{-- <img src="{{ $anime['image'] }}" alt="{{ $anime['title'] }}" loading="lazy"> --}}
+                            <img src="{{ asset($anime['image']) }}" alt="{{ $anime['title'] }}" loading="lazy">
                             <div class="card-badge badge-{{ $anime['status'] }}">
                                 {{ $anime['status'] === 'airing' ? 'Ongoing' : ($anime['status'] === 'completed' ? 'Completed' : 'Upcoming') }}
                             </div>
