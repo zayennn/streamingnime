@@ -8,7 +8,7 @@
 /* Hero Section */
 .genre-hero,
 .genre-detail-hero {
-    height: 300px;
+    height: 400px;
     background: linear-gradient(135deg, rgba(255, 0, 110, 0.2), rgba(131, 56, 236, 0.2), rgba(58, 134, 255, 0.2)),
         url('/images/slider hero/jigokuraku.jpg');
     background-size: cover;
@@ -554,6 +554,11 @@
 }
 
 @media screen and (max-width: 768px) {
+
+    .genre-filter-section,
+    .detail-filter-section {
+        position: static;
+    }
 
     .genre-hero,
     .genre-detail-hero {
