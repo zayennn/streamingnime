@@ -113,7 +113,7 @@
                 <h2 class="section-title">
                     <span class="title-gradient">Trending Now</span>
                 </h2>
-                <a href="/trending" class="view-all">View All</a>
+                <a href="/anime-list" class="view-all">View All</a>
             </div>
             <div class="anime-grid">
                 @foreach ($trending as $anime)
