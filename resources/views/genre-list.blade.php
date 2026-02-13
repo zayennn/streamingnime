@@ -177,7 +177,6 @@
                     }
                 });
 
-                // Update count and show/hide no results
                 genreCountSpan.textContent = `${visibleCount} Genres`;
 
                 if (visibleCount === 0) {
