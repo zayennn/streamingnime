@@ -10,7 +10,7 @@
 .genre-detail-hero {
     height: 300px;
     background: linear-gradient(135deg, rgba(255, 0, 110, 0.2), rgba(131, 56, 236, 0.2), rgba(58, 134, 255, 0.2)),
-        url('https://images.unsplash.com/photo-1618336753974-aae8e04506aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+        url('/images/slider hero/jigokuraku.jpg');
     background-size: cover;
     background-position: center;
     position: relative;
