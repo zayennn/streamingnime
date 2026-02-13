@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Str;
+use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
@@ -66,7 +67,7 @@ class HomeController extends Controller
 
         foreach ($allAnimeWithGenres as $animeItem) {
             foreach ($animeItem['genres'] as $genre) {
-                if (! isset($genreCounter[$genre])) {
+                if (!isset($genreCounter[$genre])) {
                     $genreCounter[$genre] = 0;
                 }
                 $genreCounter[$genre]++;
@@ -137,6 +138,146 @@ class HomeController extends Controller
             'allTypes' => $allTypes,
             'allStatuses' => $allStatuses,
             'page' => 'Anime List',
+        ]);
+    }
+
+    public function genreList()
+    {
+        $animeData = collect(require app_path('Data/animeData.php'));
+
+        // Hitung jumlah anime per genre
+        $genreCounts = [];
+        foreach ($animeData as $anime) {
+            foreach ($anime['genres'] as $genre) {
+                if (!isset($genreCounts[$genre])) {
+                    $genreCounts[$genre] = [
+                        'count' => 0,
+                        'anime' => []
+                    ];
+                }
+                $genreCounts[$genre]['count']++;
+                $genreCounts[$genre]['anime'][] = $anime;
+            }
+        }
+
+        // Ambil sample anime untuk setiap genre (3 anime terpopuler)
+        $genres = [];
+        $gradients = [
+            'linear-gradient(135deg, #ff006e, #ff4d94)',
+            'linear-gradient(135deg, #8338ec, #9d5cff)',
+            'linear-gradient(135deg, #3a86ff, #5fa8ff)',
+            'linear-gradient(135deg, #ff006e, #8338ec)',
+            'linear-gradient(135deg, #8338ec, #3a86ff)',
+            'linear-gradient(135deg, #3a86ff, #ff006e)',
+            'linear-gradient(135deg, #ff006e, #3a86ff)',
+            'linear-gradient(135deg, #8338ec, #ff006e)',
+        ];
+
+        $i = 0;
+        foreach ($genreCounts as $genreName => $data) {
+            // Ambil 3 anime terbaik untuk genre ini (sort by rating)
+            $topAnime = collect($data['anime'])
+                ->sortByDesc('rating')
+                ->take(3)
+                ->values()
+                ->map(function ($item) {
+                    return [
+                        'id' => $item['id'],
+                        'title' => $item['title'],
+                        'image' => $item['image'],
+                        'rating' => $item['rating'],
+                        'year' => $item['year'],
+                    ];
+                });
+
+            $genres[] = [
+                'id' => $i + 1,
+                'name' => $genreName,
+                'slug' => Str::slug($genreName),
+                'count' => $data['count'],
+                'gradient' => $gradients[$i % count($gradients)],
+                'description' => "Explore the best {$genreName} anime series and movies. From classics to the latest releases.",
+                'topAnime' => $topAnime,
+            ];
+            $i++;
+        }
+
+        // Sort genres by name
+        usort($genres, function($a, $b) {
+            return strcmp($a['name'], $b['name']);
+        });
+
+        // Statistik
+        $totalGenres = count($genres);
+        $totalAnime = $animeData->count();
+        $mostPopularGenre = collect($genreCounts)->sortByDesc('count')->keys()->first();
+
+        return view('genre-list', compact(
+            'genres',
+            'totalGenres',
+            'totalAnime',
+            'mostPopularGenre'
+        ), [
+            'page' => 'Genre List',
+        ]);
+    }
+
+    public function genreDetail($slug)
+    {
+        $animeData = collect(require app_path('Data/animeData.php'));
+        
+        // Cari genre berdasarkan slug
+        $genreName = null;
+        $genreAnime = [];
+        
+        foreach ($animeData as $anime) {
+            foreach ($anime['genres'] as $genre) {
+                if (Str::slug($genre) === $slug) {
+                    $genreName = $genre;
+                    $genreAnime[] = $anime;
+                    break;
+                }
+            }
+        }
+
+        if (!$genreName) {
+            abort(404);
+        }
+
+        // Sort anime by rating
+        $genreAnime = collect($genreAnime)->sortByDesc('rating')->values();
+
+        // Statistik genre
+        $totalAnime = $genreAnime->count();
+        $avgRating = round($genreAnime->avg('rating'), 1);
+        $newestAnime = $genreAnime->sortByDesc('year')->first();
+        $highestRated = $genreAnime->sortByDesc('rating')->first();
+
+        // Ambil genre lain untuk rekomendasi
+        $otherGenres = collect(require app_path('Data/animeData.php'))
+            ->pluck('genres')
+            ->flatten()
+            ->unique()
+            ->filter(fn($g) => Str::slug($g) !== $slug)
+            ->take(8)
+            ->map(function($g) {
+                return [
+                    'name' => $g,
+                    'slug' => Str::slug($g),
+                ];
+            });
+
+        return view('genre-detail', compact(
+            'genreName',
+            'genreAnime',
+            'totalAnime',
+            'avgRating',
+            'newestAnime',
+            'highestRated',
+            'otherGenres',
+            'slug'
+        ), [
+            'page' => $genreName . ' Anime',
         ]);
     }
 }
