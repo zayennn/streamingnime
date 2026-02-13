@@ -4,8 +4,8 @@
     <nav class="nav__menu">
         <a href="/" class="nav__link" data-route="/">Home</a>
         <a href="/anime-list" class="nav__link" data-route="/anime-list">Anime List</a>
-        {{-- <a href="/genre" class="nav__link" data-route="/genre">Genre List</a>
-        <a href="/ongoing" class="nav__link" data-route="/ongoing">On-Going</a> --}}
+        <a href="/genre" class="nav__link" data-route="/genre">Genre List</a>
+        {{-- <a href="/ongoing" class="nav__link" data-route="/ongoing">On-Going</a> --}}
         <a href="/login" class="nav__link login">Sign In</a>
 
         <div class="line__tracking"></div>
