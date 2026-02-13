@@ -211,7 +211,6 @@
                     }
                 });
 
-                // Reorder DOM elements
                 cardsArray.forEach(card => {
                     genreResults.appendChild(card);
                 });
