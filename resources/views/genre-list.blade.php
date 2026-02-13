@@ -229,7 +229,6 @@
                 });
             }
 
-            // Event listeners
             searchInput.addEventListener('input', filterGenres);
 
             clearButton.addEventListener('click', function() {
