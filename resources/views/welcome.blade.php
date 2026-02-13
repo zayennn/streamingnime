@@ -216,7 +216,7 @@
         </section>
 
         <!-- Section: Popular Genres -->
-        <section class="content-section">
+        {{-- <section class="content-section">
             <div class="section-header">
                 <h2 class="section-title">
                     <span class="title-gradient">Popular Genres</span>
@@ -296,7 +296,7 @@
                     @endforeach
                 @endif
             </div>
-        </section>
+        </section> --}}
     </main>
 @endsection
 
