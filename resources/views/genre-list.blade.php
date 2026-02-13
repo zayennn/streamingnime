@@ -216,7 +216,6 @@
                 });
             }
 
-            // View toggle functionality
             function toggleView(view) {
                 currentView = view;
                 genreResults.className = `genre-results ${view}-view`;
