@@ -244,7 +244,6 @@ class HomeController extends Controller
         $newestAnime = $genreAnime->sortByDesc('year')->first();
         $highestRated = $genreAnime->sortByDesc('rating')->first();
 
-        // Ambil genre lain untuk rekomendasi
         $otherGenres = collect(require app_path('Data/animeData.php'))
             ->pluck('genres')
             ->flatten()
