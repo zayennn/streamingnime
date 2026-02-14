@@ -33,10 +33,10 @@
 
 .hero-content-wrapper {
     position: relative;
-    z-index: 2;
+    z-index: 100;
     max-width: 800px;
     text-align: center;
-    padding: 2rem;
+    padding: 3rem;
 }
 
 .hero-title {
