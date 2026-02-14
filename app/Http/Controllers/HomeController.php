@@ -284,7 +284,6 @@ class HomeController extends Controller
             abort(404);
         }
 
-        // Get related anime by same genres
         $relatedAnime = $animeData
             ->filter(function ($item) use ($anime, $id) {
                 if ($item['id'] == $id) return false;
