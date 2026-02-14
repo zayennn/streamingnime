@@ -1,7 +1,31 @@
 <?php
 
 return [
-    // Anime starting with numbers/symbols
+    // ID: 1 - Anime starting with numbers/symbols
+    [
+        'id' => 1,
+        'title' => '86 Eighty-Six',
+        'letter' => '#',
+        'year' => 2021,
+        'rating' => 8.3,
+        'episodes' => '23',
+        'episode' => 'S2 E11',
+        'type' => 'TV',
+        'status' => 'completed',
+        'genres' => ['Action', 'Drama', 'Sci-Fi'],
+        'image' => 'images/anime/86 Eighty-Six.jpg',
+        'badge' => null,
+        'airing' => null,
+        'time' => null,
+        'score' => 8.3,
+        'rank' => null,
+        'description' => 'The Republic of San Magnolia has been at war with the neighboring Empire for years. To conceal the mounting casualties, the government creates a propaganda campaign, claiming that the autonomous drones are the only ones falling in battle. In reality, the drones are piloted by the Eighty-Six, humans treated as less than human who are forced to fight in non-human drones.',
+        'studio' => 'A-1 Pictures',
+        'duration' => '24 min per episode',
+        'aired' => 'Apr 2021 to Mar 2022',
+    ],
+
+    // ID: 2
     [
         'id' => 2,
         'title' => '2.43: Seiin High School Boys Volleyball Team',
@@ -19,7 +43,13 @@ return [
         'time' => null,
         'score' => 6.8,
         'rank' => null,
+        'description' => 'In the Fukui prefecture, childhood friends Kimichika Haijima and Yuni Kuroba reunite after a painful incident tore them apart in middle school. Now in high school, they join the volleyball team together, aiming to reach new heights in the sport they both love.',
+        'studio' => 'David Production',
+        'duration' => '24 min per episode',
+        'aired' => 'Jan 2021 to Mar 2021',
     ],
+
+    // ID: 3
     [
         'id' => 3,
         'title' => '91 Days',
@@ -37,9 +67,13 @@ return [
         'time' => null,
         'score' => 8.0,
         'rank' => null,
+        'description' => 'During Prohibition Era, a young man named Avilio returns to his hometown after receiving a mysterious letter. He infiltrates the mafia family responsible for murdering his family, seeking revenge over the course of 91 days.',
+        'studio' => 'Shuka',
+        'duration' => '24 min per episode',
+        'aired' => 'Jul 2016 to Sep 2016',
     ],
 
-    // A
+    // ID: 4 - A
     [
         'id' => 4,
         'title' => 'Attack on Titan',
@@ -57,7 +91,13 @@ return [
         'time' => 'Sundays',
         'score' => 9.1,
         'rank' => null,
+        'description' => 'After his hometown is destroyed and his mother is killed, young Eren Jaeger vows to cleanse the earth of the giant humanoid Titans that have brought humanity to the brink of extinction. He joins the Survey Corps, a military unit that fights Titans outside the walls.',
+        'studio' => 'Wit Studio, MAPPA',
+        'duration' => '24 min per episode',
+        'aired' => 'Apr 2013 to Present',
     ],
+
+    // ID: 5
     [
         'id' => 5,
         'title' => 'Another',
@@ -75,7 +115,13 @@ return [
         'time' => null,
         'score' => 7.5,
         'rank' => null,
+        'description' => 'A boy named Koichi Sakakibara transfers to a new school where he discovers that a curse exists in his class. Students and people around them begin to die in a series of gruesome accidents. He and a classmate, Mei Misaki, investigate the curse surrounding their classmates.',
+        'studio' => 'P.A. Works',
+        'duration' => '24 min per episode',
+        'aired' => 'Jan 2012 to Mar 2012',
     ],
+
+    // ID: 6
     [
         'id' => 6,
         'title' => 'Assassination Classroom',
@@ -93,7 +139,13 @@ return [
         'time' => null,
         'score' => 8.1,
         'rank' => null,
+        'description' => 'A powerful creature claims that within a year, Earth will be destroyed by him. However, he offers humanity a chance to prevent this fate by allowing them to try and assassinate him first - by becoming his students. The misfits of Class 3-E must now balance their school life with their mission to kill their teacher before time runs out.',
+        'studio' => 'Lerche',
+        'duration' => '24 min per episode',
+        'aired' => 'Jan 2015 to Jun 2016',
     ],
+
+    // ID: 7
     [
         'id' => 7,
         'title' => 'Akame ga Kill!',
@@ -111,7 +163,13 @@ return [
         'time' => null,
         'score' => 7.6,
         'rank' => null,
+        'description' => 'A young man named Tatsumi travels to the Capital in hopes of making a difference in his poverty-stricken village, only to discover the dark truth behind the corrupt government. He joins a group of assassins known as Night Raid who fight against the corruption using their Imperial Arms, powerful weapons with unique abilities.',
+        'studio' => 'C-Station',
+        'duration' => '24 min per episode',
+        'aired' => 'Jul 2014 to Dec 2014',
     ],
+
+    // ID: 8
     [
         'id' => 8,
         'title' => 'Angel Beats!',
@@ -129,9 +187,13 @@ return [
         'time' => null,
         'score' => 7.9,
         'rank' => null,
+        'description' => 'A boy named Yuzuru Otonashi wakes up in a mysterious afterlife purgatory called the "afterlife school" where he meets Yuri, the leader of the Afterlife Battlefront, a group of rebels against a girl named Angel. Together they uncover the truth behind their deaths and try to find peace.',
+        'studio' => 'P.A. Works',
+        'duration' => '24 min per episode',
+        'aired' => 'Apr 2010 to Jun 2010',
     ],
 
-    // B
+    // ID: 9 - B
     [
         'id' => 9,
         'title' => 'Bleach',
@@ -149,7 +211,13 @@ return [
         'time' => 'Tuesdays',
         'score' => 8.2,
         'rank' => null,
+        'description' => 'A high school student named Ichigo Kurosaki, who can see ghosts, becomes a Soul Reaper and gains supernatural powers. He fights evil spirits known as Hollows while protecting the living and guiding the dead to the afterlife. His journey takes him to the Soul Society, where he uncovers dark secrets.',
+        'studio' => 'Pierrot',
+        'duration' => '24 min per episode',
+        'aired' => 'Oct 2004 to Present',
     ],
+
+    // ID: 10
     [
         'id' => 10,
         'title' => 'Black Clover',
@@ -167,7 +235,13 @@ return [
         'time' => null,
         'score' => 9.8,
         'rank' => null,
+        'description' => 'Asta and Yuno were abandoned together at the same church and have been inseparable since childhood. As children, they promised that they would compete against each other to see who would become the next Wizard King. However, while Yuno is a prodigy with immense magical power, Asta is the only one in the world without any magic. To overcome this, he relies on his physical strength and a rare grimoire that gives him anti-magic powers.',
+        'studio' => 'Pierrot',
+        'duration' => '24 min per episode',
+        'aired' => 'Oct 2017 to Mar 2021',
     ],
+
+    // ID: 11
     [
         'id' => 11,
         'title' => 'Blue Lock',
@@ -185,9 +259,13 @@ return [
         'time' => null,
         'score' => 8.3,
         'rank' => null,
+        'description' => 'After a disappointing defeat at the 2018 World Cup, the Japanese Football Union creates a training facility called "Blue Lock" to develop the world\'s greatest egotistical striker. Three hundred of Japan\'s best youth forwards are pitted against each other in a series of psychological and physical challenges to determine who will lead the national team.',
+        'studio' => 'Eight Bit',
+        'duration' => '24 min per episode',
+        'aired' => 'Oct 2022 to Mar 2023',
     ],
 
-    // C
+    // ID: 12 - C
     [
         'id' => 12,
         'title' => 'Chainsaw Man',
@@ -205,7 +283,13 @@ return [
         'time' => null,
         'score' => 8.5,
         'rank' => null,
+        'description' => 'A young man named Denji works as a Devil Hunter to pay off his deceased father\'s debt to the yakuza. After being betrayed and killed, he merges with his pet devil Pochita to become Chainsaw Man, a being with chainsaw abilities. He is recruited by a government agency to hunt devils while dealing with the complexities of his new existence.',
+        'studio' => 'MAPPA',
+        'duration' => '24 min per episode',
+        'aired' => 'Oct 2022 to Dec 2022',
     ],
+
+    // ID: 13
     [
         'id' => 13,
         'title' => 'Code Geass',
@@ -223,7 +307,13 @@ return [
         'time' => null,
         'score' => 8.7,
         'rank' => null,
+        'description' => 'Exiled prince Lelouch vi Britannia gains the power of Geass, which allows him to command anyone to do his bidding. He uses this power to lead a rebellion against the Holy Britannian Empire, which conquered Japan, now called Area 11. Disguised as the masked revolutionary Zero, he fights to create a better world for his sister Nunnally.',
+        'studio' => 'Sunrise',
+        'duration' => '24 min per episode',
+        'aired' => 'Oct 2006 to Jul 2008',
     ],
+
+    // ID: 14
     [
         'id' => 14,
         'title' => 'Cowboy Bebop',
@@ -241,9 +331,13 @@ return [
         'time' => null,
         'score' => 8.9,
         'rank' => null,
+        'description' => 'In the year 2071, a ragtag crew of bounty hunters travel across the solar system on their ship, the Bebop, chasing criminals and trying to escape their pasts. The crew includes Spike Spiegel, a former syndicate member; Jet Black, a former cop; Faye Valentine, a con artist with amnesia; and Edward, a eccentric hacker.',
+        'studio' => 'Sunrise',
+        'duration' => '24 min per episode',
+        'aired' => 'Apr 1998 to Apr 1999',
     ],
 
-    // D
+    // ID: 15 - D
     [
         'id' => 15,
         'title' => 'Death Note',
@@ -261,15 +355,21 @@ return [
         'time' => null,
         'score' => 8.6,
         'rank' => null,
+        'description' => 'A high school genius named Light Yagami discovers a supernatural notebook that allows him to kill anyone by writing their name while picturing their face. He decides to use this power to rid the world of criminals and become the god of a new world order. However, his actions attract the attention of the world\'s greatest detective, known only as L, leading to a deadly cat-and-mouse game.',
+        'studio' => 'Madhouse',
+        'duration' => '24 min per episode',
+        'aired' => 'Oct 2006 to Jun 2007',
     ],
+
+    // ID: 16
     [
         'id' => 16,
-        'title' => 'Demon Slayer Season 4',
+        'title' => 'Demon Slayer: Hashira Training Arc',
         'letter' => 'D',
-        'year' => 2019,
+        'year' => 2024,
         'rating' => 8.7,
-        'episodes' => '55+',
-        'episode' => 'S3 E11',
+        'episodes' => '8',
+        'episode' => 'S4 E8',
         'type' => 'TV',
         'status' => 'airing',
         'genres' => ['Action', 'Adventure', 'Fantasy'],
@@ -279,7 +379,13 @@ return [
         'time' => 'Sundays',
         'score' => 8.7,
         'rank' => null,
+        'description' => 'Tanjiro Kamado returns to a life of demon slaying after his family is slaughtered and his younger sister Nezuko is turned into a demon. He joins the Demon Slayer Corps to find a cure for his sister. In this latest arc, the Hashira train the younger demon slayers for the final battle against Muzan Kibutsuji.',
+        'studio' => 'ufotable',
+        'duration' => '24 min per episode',
+        'aired' => 'Apr 2024 to Jun 2024',
     ],
+
+    // ID: 17
     [
         'id' => 17,
         'title' => 'Dr. Stone',
@@ -297,9 +403,13 @@ return [
         'time' => 'Thursdays',
         'score' => 8.2,
         'rank' => null,
+        'description' => 'After a mysterious light turns all of humanity to stone, genius boy Senku Ishigami awakens thousands of years later in a world where civilization has collapsed. He uses his scientific knowledge to rebuild civilization from scratch, starting by reviving other humans and forming the Kingdom of Science to overcome challenges and restore humanity.',
+        'studio' => 'TMS Entertainment',
+        'duration' => '24 min per episode',
+        'aired' => 'Jul 2019 to Present',
     ],
 
-    // E
+    // ID: 18 - E
     [
         'id' => 18,
         'title' => 'Erased',
@@ -317,10 +427,16 @@ return [
         'time' => null,
         'score' => 8.3,
         'rank' => null,
+        'description' => 'Satoru Fujinuma has a mysterious ability called "Revival" that sends him back in time moments before a tragedy occurs, allowing him to prevent it. When his mother is murdered and he is framed for the crime, he is sent back 18 years to his elementary school days. He must find the real killer and prevent the murder of a classmate that occurred during that time.',
+        'studio' => 'A-1 Pictures',
+        'duration' => '24 min per episode',
+        'aired' => 'Jan 2016 to Mar 2016',
     ],
+
+    // ID: 19
     [
         'id' => 19,
-        'title' => 'Eighty Six',
+        'title' => '86 Eighty-Six',
         'letter' => 'E',
         'year' => 2021,
         'rating' => 8.3,
@@ -335,7 +451,13 @@ return [
         'time' => null,
         'score' => 8.3,
         'rank' => null,
+        'description' => 'The Republic of San Magnolia has been at war with the neighboring Empire for years. To conceal the mounting casualties, the government creates a propaganda campaign, claiming that the autonomous drones are the only ones falling in battle. In reality, the drones are piloted by the Eighty-Six, humans treated as less than human who are forced to fight in non-human drones.',
+        'studio' => 'A-1 Pictures',
+        'duration' => '24 min per episode',
+        'aired' => 'Apr 2021 to Mar 2022',
     ],
+
+    // ID: 20
     [
         'id' => 20,
         'title' => 'Eureka Seven',
@@ -353,9 +475,13 @@ return [
         'time' => null,
         'score' => 8.0,
         'rank' => null,
+        'description' => 'Renton Thurston, a 14-year-old boy, dreams of joining the mercenary group Gekkostate and their leader, the legendary Holland Novak. When a mysterious girl named Eureka crashes a mecha through his garage, Renton gets his chance. He joins Gekkostate and becomes the pilot of the Nirvash, a powerful mecha, while uncovering the secrets of the world and his own feelings.',
+        'studio' => 'Bones',
+        'duration' => '24 min per episode',
+        'aired' => 'Apr 2005 to Apr 2006',
     ],
 
-    // F
+    // ID: 21 - F
     [
         'id' => 21,
         'title' => 'Fullmetal Alchemist: Brotherhood',
@@ -373,7 +499,13 @@ return [
         'time' => null,
         'score' => 9.1,
         'rank' => 1,
+        'description' => 'Two brothers, Edward and Alphonse Elric, use alchemy to try to bring their mother back to life, but the experiment fails and costs Edward his leg and Alphonse his entire body. Edward sacrifices his arm to attach Alphonse\'s soul to a suit of armor. They become state alchemists to search for the Philosopher\'s Stone, hoping to restore their bodies, and uncover a dark conspiracy along the way.',
+        'studio' => 'Bones',
+        'duration' => '24 min per episode',
+        'aired' => 'Apr 2009 to Jul 2010',
     ],
+
+    // ID: 22
     [
         'id' => 22,
         'title' => 'Fate/Zero',
@@ -391,7 +523,13 @@ return [
         'time' => null,
         'score' => 8.3,
         'rank' => null,
+        'description' => 'Ten years before the events of Fate/stay night, the Fourth Holy Grail War takes place in Fuyuki City. Seven magi summon seven legendary heroes to battle for the Holy Grail, a mystical artifact that grants any wish. The story follows Kiritsugu Emiya, the merciless assassin chosen as the master of Saber, as he fights against other masters and their servants.',
+        'studio' => 'ufotable',
+        'duration' => '24 min per episode',
+        'aired' => 'Oct 2011 to Dec 2011',
     ],
+
+    // ID: 23
     [
         'id' => 23,
         'title' => 'Fruits Basket',
@@ -409,9 +547,13 @@ return [
         'time' => null,
         'score' => 8.3,
         'rank' => null,
+        'description' => 'After her mother dies in a car accident, high school student Tohru Honda is taken in by the mysterious Soma family. She discovers that the Somas are cursed: when hugged by someone of the opposite sex, they transform into animals of the Chinese zodiac. As she lives with them, she learns about their painful past and helps them heal.',
+        'studio' => 'TMS Entertainment',
+        'duration' => '24 min per episode',
+        'aired' => 'Apr 2019 to Jun 2021',
     ],
 
-    // G
+    // ID: 24 - G
     [
         'id' => 24,
         'title' => 'Gintama',
@@ -429,7 +571,13 @@ return [
         'time' => null,
         'score' => 9.0,
         'rank' => null,
+        'description' => 'In an alternate Edo period where aliens have conquered Japan, samurai Gintoki Sakata runs an odd-jobs business with his friends Shinpachi and Kagura. Together, they take on various jobs while dealing with the alien invaders, rogue samurai, and their own complicated pasts, all while delivering a mix of action, comedy, and heartfelt moments.',
+        'studio' => 'Sunrise',
+        'duration' => '24 min per episode',
+        'aired' => 'Apr 2006 to Oct 2018',
     ],
+
+    // ID: 25
     [
         'id' => 25,
         'title' => 'Gurren Lagann',
@@ -447,9 +595,13 @@ return [
         'time' => null,
         'score' => 8.3,
         'rank' => null,
+        'description' => 'In a future where humans live underground to escape the Beastmen who rule the surface, two boys named Simon and Kamina discover a mecha called Lagann. They use it to reach the surface and join a rebellion against the Beastmen, forming Team Gurren to fight for humanity\'s freedom and reach the stars.',
+        'studio' => 'Gainax',
+        'duration' => '24 min per episode',
+        'aired' => 'Apr 2007 to Sep 2007',
     ],
 
-    // H
+    // ID: 26 - H
     [
         'id' => 26,
         'title' => 'Hunter x Hunter (2011)',
@@ -467,7 +619,13 @@ return [
         'time' => null,
         'score' => 9.0,
         'rank' => 2,
+        'description' => 'Gon Freecss, a young boy, discovers that his father, whom he thought was dead, is actually a legendary Hunter—an elite adventurer with a license to go anywhere and do almost anything. Gon leaves his home to become a Hunter and find his father. Along the way, he makes friends and faces dangerous challenges in the Hunter Exam and beyond.',
+        'studio' => 'Madhouse',
+        'duration' => '24 min per episode',
+        'aired' => 'Oct 2011 to Sep 2014',
     ],
+
+    // ID: 27
     [
         'id' => 27,
         'title' => 'Haikyu!!',
@@ -485,9 +643,13 @@ return [
         'time' => null,
         'score' => 8.4,
         'rank' => null,
+        'description' => 'Shoyo Hinata, a short but determined boy, falls in love with volleyball after seeing a match on TV. He joins his middle school team and eventually faces Tobio Kageyama, a prodigy setter known as the "King of the Court." In high school, they end up on the same team and must overcome their rivalry to become the best duo in Japan.',
+        'studio' => 'Production I.G',
+        'duration' => '24 min per episode',
+        'aired' => 'Apr 2014 to Dec 2020',
     ],
 
-    // I
+    // ID: 28 - I
     [
         'id' => 28,
         'title' => 'Inuyasha',
@@ -505,7 +667,13 @@ return [
         'time' => null,
         'score' => 7.9,
         'rank' => null,
+        'description' => 'A modern-day schoolgirl named Kagome Higurashi is transported to the feudal era of Japan through a well on her family\'s shrine. There, she meets Inuyasha, a half-demon who was sealed to a tree. When she accidentally shatters the sacred Shikon Jewel, its shards are scattered across Japan, and they must team up to find them before they fall into the wrong hands.',
+        'studio' => 'Sunrise',
+        'duration' => '24 min per episode',
+        'aired' => 'Oct 2000 to Sep 2004',
     ],
+
+    // ID: 29
     [
         'id' => 29,
         'title' => 'Is It Wrong to Try to Pick Up Girls in a Dungeon?',
@@ -523,9 +691,13 @@ return [
         'time' => 'Fridays',
         'score' => 7.5,
         'rank' => null,
+        'description' => 'In the city of Orario, adventurers form parties to explore the Dungeon, a massive labyrinth filled with monsters. Bell Cranel, a solo adventurer and member of the weak Goddess Hestia\'s familia, dreams of becoming a great hero. After a fateful encounter with the powerful adventurer Ais Wallenstein, he gains a unique skill that allows him to grow faster than anyone else.',
+        'studio' => 'J.C.Staff',
+        'duration' => '24 min per episode',
+        'aired' => 'Apr 2015 to Present',
     ],
 
-    // J
+    // ID: 30 - J
     [
         'id' => 30,
         'title' => 'Jujutsu Kaisen',
@@ -543,7 +715,13 @@ return [
         'time' => 'Thursdays',
         'score' => 8.6,
         'rank' => null,
+        'description' => 'Yuji Itadori, a high school student with extraordinary physical strength, swallows a cursed object to save his friends from Curses. This object is the finger of Ryomen Sukuna, the King of Curses. Itadori gains Sukuna\'s power but also becomes his vessel. He joins the Tokyo Jujutsu High School to learn about Curses and hunt them down while searching for Sukuna\'s remaining fingers.',
+        'studio' => 'MAPPA',
+        'duration' => '24 min per episode',
+        'aired' => 'Oct 2020 to Present',
     ],
+
+    // ID: 31
     [
         'id' => 31,
         'title' => "JoJo's Bizarre Adventure",
@@ -561,9 +739,13 @@ return [
         'time' => 'Fridays',
         'score' => 8.4,
         'rank' => null,
+        'description' => 'The story follows the Joestar family across generations as they battle supernatural foes using Hamon and Stands. From the Victorian era to modern Japan, each part features a new JoJo with unique abilities. The series is known for its creative fights, memorable characters, and iconic poses.',
+        'studio' => 'David Production',
+        'duration' => '24 min per episode',
+        'aired' => 'Oct 2012 to Present',
     ],
 
-    // K
+    // ID: 32 - K
     [
         'id' => 32,
         'title' => 'Kaguya-sama: Love is War',
@@ -581,7 +763,13 @@ return [
         'time' => null,
         'score' => 8.5,
         'rank' => null,
+        'description' => 'Kaguya Shinomiya and Miyuki Shirogane are the leaders of the student council at the prestigious Shuchiin Academy. They are both in love with each other but are too proud to confess, believing that whoever confesses first loses the relationship. Thus begins a psychological war of wit and manipulation as they try to make the other confess.',
+        'studio' => 'A-1 Pictures',
+        'duration' => '24 min per episode',
+        'aired' => 'Jan 2019 to Jun 2022',
     ],
+
+    // ID: 33
     [
         'id' => 33,
         'title' => 'Kimi no Na wa',
@@ -599,9 +787,13 @@ return [
         'time' => null,
         'score' => 8.4,
         'rank' => null,
+        'description' => 'Mitsuha, a high school girl in a rural town, and Taki, a high school boy in Tokyo, discover that they are swapping bodies in their dreams. As they communicate through notes and experience each other\'s lives, they develop a connection across time and space. But a shocking revelation about their true circumstances changes everything.',
+        'studio' => 'CoMix Wave Films',
+        'duration' => '107 min',
+        'aired' => 'Aug 2016',
     ],
 
-    // L
+    // ID: 34 - L
     [
         'id' => 34,
         'title' => 'Love Live! School Idol Project',
@@ -619,17 +811,21 @@ return [
         'time' => null,
         'score' => 7.4,
         'rank' => null,
+        'description' => 'Otonokizaka High School is facing closure due to low enrollment. Honoka Kosaka, along with her friends, decides to form an idol group called µ\'s to attract students and save their school. They face challenges and rival groups while pursuing their dream of becoming school idols.',
+        'studio' => 'Sunrise',
+        'duration' => '24 min per episode',
+        'aired' => 'Jan 2013 to Jun 2014',
     ],
 
-    // M
+    // ID: 35 - M
     [
         'id' => 35,
         'title' => 'My Hero Academia Season 7',
         'letter' => 'M',
-        'year' => 2016,
+        'year' => 2024,
         'rating' => 8.4,
-        'episodes' => '138+',
-        'episode' => 'S6 E25',
+        'episodes' => '21',
+        'episode' => 'S7 E21',
         'type' => 'TV',
         'status' => 'airing',
         'genres' => ['Action', 'Comedy', 'School'],
@@ -639,7 +835,13 @@ return [
         'time' => 'Saturdays',
         'score' => 8.4,
         'rank' => null,
+        'description' => 'In a world where 80% of the population has superpowers called Quirks, Izuku Midoriya is born without one. Despite this, he dreams of becoming a hero. After a fateful encounter with the world\'s greatest hero, All Might, he inherits his Quirk and enrolls in U.A. High School to train as a hero. In this season, the final battle against the villains intensifies.',
+        'studio' => 'Bones',
+        'duration' => '24 min per episode',
+        'aired' => 'May 2024 to Oct 2024',
     ],
+
+    // ID: 36
     [
         'id' => 36,
         'title' => 'Mob Psycho 100',
@@ -657,9 +859,13 @@ return [
         'time' => null,
         'score' => 8.5,
         'rank' => null,
+        'description' => 'Shigeo "Mob" Kageyama is a powerful psychic who wants to live a normal life. He works for con artist Reigen Arataka, who uses Mob\'s powers to exorcise evil spirits. As Mob suppresses his emotions to keep his powers in check, he must learn to accept himself and his feelings when his emotions reach 100%.',
+        'studio' => 'Bones',
+        'duration' => '24 min per episode',
+        'aired' => 'Jul 2016 to Dec 2022',
     ],
 
-    // N
+    // ID: 37 - N
     [
         'id' => 37,
         'title' => 'Naruto',
@@ -677,7 +883,13 @@ return [
         'time' => null,
         'score' => 8.3,
         'rank' => null,
+        'description' => 'Naruto Uzumaki, a young ninja with a sealed demon fox inside him, dreams of becoming the Hokage, the leader of his village, to gain recognition and respect from those around him. He faces challenges, makes friends, and grows as a ninja while protecting his village from threats.',
+        'studio' => 'Pierrot',
+        'duration' => '24 min per episode',
+        'aired' => 'Oct 2002 to Feb 2007',
     ],
+
+    // ID: 38
     [
         'id' => 38,
         'title' => 'Naruto Shippuden',
@@ -695,9 +907,13 @@ return [
         'time' => null,
         'score' => 8.6,
         'rank' => null,
+        'description' => 'Two and a half years after leaving to train with Jiraiya, Naruto returns to the Hidden Leaf Village. He reunites with his friends and faces the Akatsuki organization, which seeks to capture all the tailed beasts, including the Nine-Tails sealed within him. The series follows the Fourth Great Ninja War and Naruto\'s journey to save his friend Sasuke.',
+        'studio' => 'Pierrot',
+        'duration' => '24 min per episode',
+        'aired' => 'Feb 2007 to Mar 2017',
     ],
 
-    // O
+    // ID: 39 - O
     [
         'id' => 39,
         'title' => 'One Piece',
@@ -715,7 +931,13 @@ return [
         'time' => 'Sundays',
         'score' => 8.7,
         'rank' => null,
+        'description' => 'Monkey D. Luffy, inspired by his idol the pirate Shanks, sets out on a journey to become the Pirate King and find the legendary treasure, One Piece. Along the way, he gathers a diverse crew of pirates, each with their own dreams and ambitions. Together they sail the Grand Line, facing powerful enemies and uncovering the world\'s secrets.',
+        'studio' => 'Toei Animation',
+        'duration' => '24 min per episode',
+        'aired' => 'Oct 1999 to Present',
     ],
+
+    // ID: 40
     [
         'id' => 40,
         'title' => 'One Punch Man',
@@ -733,9 +955,13 @@ return [
         'time' => null,
         'score' => 8.7,
         'rank' => null,
+        'description' => 'Saitama is a hero who can defeat any enemy with a single punch. However, his overwhelming power has left him bored and disillusioned, as he seeks an opponent who can challenge him. He takes on a cyborg disciple, Genos, and joins the Hero Association to find worthy opponents while dealing with increasingly bizarre threats.',
+        'studio' => 'Madhouse, J.C.Staff',
+        'duration' => '24 min per episode',
+        'aired' => 'Oct 2015 to Jul 2019',
     ],
 
-    // P
+    // ID: 41 - P
     [
         'id' => 41,
         'title' => 'Pokémon',
@@ -753,9 +979,13 @@ return [
         'time' => 'Fridays',
         'score' => 7.4,
         'rank' => null,
+        'description' => 'Ash Ketchum, a young boy from Pallet Town, dreams of becoming a Pokémon Master. Together with his partner Pikachu, he travels through various regions, catching Pokémon, battling gym leaders, and thwarting the plans of Team Rocket. Along the way, he makes lifelong friends and learns valuable lessons about friendship and perseverance.',
+        'studio' => 'OLM',
+        'duration' => '24 min per episode',
+        'aired' => 'Apr 1997 to Present',
     ],
 
-    // Q
+    // ID: 42 - Q
     [
         'id' => 42,
         'title' => 'Q Transformers: Mystery of Convoy Returns',
@@ -773,12 +1003,16 @@ return [
         'time' => null,
         'score' => 5.8,
         'rank' => null,
+        'description' => 'In this CGI animated film, the Autobots and Decepticons continue their eternal war on Earth. The story follows the search for the legendary Convoy and the mystery surrounding his return. The film features chibi-style Transformers in a more lighthearted take on the franchise.',
+        'studio' => 'DandeLion Animation Studio',
+        'duration' => '80 min',
+        'aired' => 'Jan 2015',
     ],
 
-    // R
+    // ID: 43 - R
     [
         'id' => 43,
-        'title' => 'Re:Zero',
+        'title' => 'Re:Zero - Starting Life in Another World',
         'letter' => 'R',
         'year' => 2016,
         'rating' => 8.2,
@@ -793,9 +1027,13 @@ return [
         'time' => null,
         'score' => 8.2,
         'rank' => null,
+        'description' => 'Subaru Natsuki is suddenly summoned to a fantasy world. He soon discovers that he has the power of "Return by Death," which sends him back in time to a checkpoint whenever he dies. He must use this ability to save the people he cares about while enduring the trauma of dying repeatedly and keeping his power a secret.',
+        'studio' => 'White Fox',
+        'duration' => '24 min per episode',
+        'aired' => 'Apr 2016 to Mar 2021',
     ],
 
-    // S
+    // ID: 44 - S
     [
         'id' => 44,
         'title' => 'Steins;Gate',
@@ -813,7 +1051,13 @@ return [
         'time' => null,
         'score' => 9.0,
         'rank' => 3,
+        'description' => 'Rintarou Okabe, a self-proclaimed mad scientist, accidentally discovers a way to send messages to the past using a modified microwave. He and his friends experiment with time travel, but soon realize that changing the past has devastating consequences. They must navigate the dangers of altering history while being hunted by a mysterious organization.',
+        'studio' => 'White Fox',
+        'duration' => '24 min per episode',
+        'aired' => 'Apr 2011 to Sep 2011',
     ],
+
+    // ID: 45
     [
         'id' => 45,
         'title' => 'Sword Art Online',
@@ -831,10 +1075,16 @@ return [
         'time' => 'Saturdays',
         'score' => 7.2,
         'rank' => null,
+        'description' => 'In the year 2022, players of the VRMMORPG Sword Art Online find themselves trapped in the game by its creator. If they die in the game, they die in real life. Kirito, a solo player, must fight to clear the game\'s 100 floors and escape while forming bonds with other players like Asuna.',
+        'studio' => 'A-1 Pictures',
+        'duration' => '24 min per episode',
+        'aired' => 'Jul 2012 to Present',
     ],
+
+    // ID: 46
     [
         'id' => 46,
-        'title' => 'Spy x Family Season 2',
+        'title' => 'Spy x Family',
         'letter' => 'S',
         'year' => 2022,
         'rating' => 8.7,
@@ -849,9 +1099,13 @@ return [
         'time' => 'Saturdays',
         'score' => 8.7,
         'rank' => null,
+        'description' => 'A spy known as "Twilight" must build a fake family to infiltrate an elite school and get close to a political target. He adopts a girl who is secretly a telepath and marries a woman who is secretly an assassin. None of them know each other\'s true identities, but they must maintain their cover as a normal family.',
+        'studio' => 'Wit Studio, CloverWorks',
+        'duration' => '24 min per episode',
+        'aired' => 'Apr 2022 to Present',
     ],
 
-    // T
+    // ID: 47 - T
     [
         'id' => 47,
         'title' => 'Tokyo Ghoul',
@@ -869,7 +1123,13 @@ return [
         'time' => null,
         'score' => 7.8,
         'rank' => null,
+        'description' => 'Ken Kaneki, a college student, survives a deadly encounter with a ghoul and receives an organ transplant from his attacker, turning him into a half-ghoul. He must now navigate the dangerous world of ghouls, who hunt humans for food, while hiding his true nature from both humans and ghouls.',
+        'studio' => 'Pierrot',
+        'duration' => '24 min per episode',
+        'aired' => 'Jul 2014 to Dec 2018',
     ],
+
+    // ID: 48
     [
         'id' => 48,
         'title' => 'The Promised Neverland',
@@ -887,9 +1147,13 @@ return [
         'time' => null,
         'score' => 8.3,
         'rank' => null,
+        'description' => 'Emma, Norman, and Ray are orphans living a seemingly perfect life at Grace Field House. They discover that their home is actually a farm where children are raised as food for demons. They must use their wits to escape the orphanage and save all the children from their horrific fate.',
+        'studio' => 'CloverWorks',
+        'duration' => '24 min per episode',
+        'aired' => 'Jan 2019 to Mar 2021',
     ],
 
-    // U
+    // ID: 49 - U
     [
         'id' => 49,
         'title' => 'Uzaki-chan Wants to Hang Out!',
@@ -907,9 +1171,13 @@ return [
         'time' => null,
         'score' => 6.9,
         'rank' => null,
+        'description' => 'Hana Uzaki, a energetic and busty college student, constantly bothers her upperclassman Shinichi Sakurai, who prefers to be left alone. Despite his protests, Uzaki insists on spending time with him, leading to a comedic and heartwarming relationship as they navigate college life together.',
+        'studio' => 'ENGI',
+        'duration' => '24 min per episode',
+        'aired' => 'Jul 2020 to Oct 2022',
     ],
 
-    // V
+    // ID: 50 - V
     [
         'id' => 50,
         'title' => 'Vinland Saga',
@@ -927,9 +1195,13 @@ return [
         'time' => 'Mondays',
         'score' => 9.4,
         'rank' => null,
+        'description' => 'Thorfinn, a young Viking, joins a mercenary band led by the man who killed his father, Askeladd. He seeks revenge but finds himself caught in larger conflicts involving the Danish invasion of England. As he grows, he learns about the futility of violence and dreams of finding the peaceful land of Vinland.',
+        'studio' => 'Wit Studio, MAPPA',
+        'duration' => '24 min per episode',
+        'aired' => 'Jul 2019 to Present',
     ],
 
-    // W
+    // ID: 51 - W
     [
         'id' => 51,
         'title' => 'Welcome to Demon School! Iruma-kun',
@@ -947,9 +1219,13 @@ return [
         'time' => 'Saturdays',
         'score' => 7.9,
         'rank' => null,
+        'description' => 'Iruma Suzuki, a kind-hearted human boy, is sold to a demon by his parents and ends up in the demon world. He is adopted by the powerful demon Sullivan and enrolled in the Babyls School for Demons. He must hide his human identity while navigating demon school life and making friends.',
+        'studio' => 'Bandai Namco Pictures',
+        'duration' => '24 min per episode',
+        'aired' => 'Oct 2019 to Present',
     ],
 
-    // X
+    // ID: 52 - X
     [
         'id' => 52,
         'title' => 'xxxHOLiC',
@@ -967,9 +1243,13 @@ return [
         'time' => null,
         'score' => 7.7,
         'rank' => null,
+        'description' => 'Kimihiro Watanuki, a high school student plagued by supernatural spirits, meets Yuko, a mysterious witch who claims to grant wishes for a price. He starts working for her in her wish-granting shop, encountering various supernatural clients and learning about the consequences of their desires.',
+        'studio' => 'Production I.G',
+        'duration' => '24 min per episode',
+        'aired' => 'Apr 2006 to Oct 2006',
     ],
 
-    // Y
+    // ID: 53 - Y
     [
         'id' => 53,
         'title' => 'Yuri!!! on Ice',
@@ -987,9 +1267,13 @@ return [
         'time' => null,
         'score' => 8.1,
         'rank' => null,
+        'description' => 'Yuri Katsuki, a Japanese figure skater, returns home after a devastating loss at the Grand Prix Final. A video of him performing a routine by champion Victor Nikiforov goes viral, leading Victor to offer to be his coach. Together, they work towards the Grand Prix Final while their relationship deepens.',
+        'studio' => 'MAPPA',
+        'duration' => '24 min per episode',
+        'aired' => 'Oct 2016 to Dec 2016',
     ],
 
-    // Z
+    // ID: 54 - Z
     [
         'id' => 54,
         'title' => 'Zombie Land Saga',
@@ -1007,5 +1291,9 @@ return [
         'time' => null,
         'score' => 7.8,
         'rank' => null,
+        'description' => 'A group of legendary girls from different eras are resurrected as zombies by a mysterious man named Kotaro Tatsumi. He forms them into an idol group called Franchouchu to save the Saga prefecture. They must balance their undead nature with their new lives as idols while pursuing their dreams.',
+        'studio' => 'MAPPA',
+        'duration' => '24 min per episode',
+        'aired' => 'Oct 2018 to Jun 2021',
     ],
 ];
