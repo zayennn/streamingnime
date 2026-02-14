@@ -172,7 +172,6 @@ class HomeController extends Controller
 
         $i = 0;
         foreach ($genreCounts as $genreName => $data) {
-            // Ambil 3 anime terbaik untuk genre ini (sort by rating)
             $topAnime = collect($data['anime'])
                 ->sortByDesc('rating')
                 ->take(3)
@@ -199,7 +198,6 @@ class HomeController extends Controller
             $i++;
         }
 
-        // Sort genres by name
         usort($genres, function($a, $b) {
             return strcmp($a['name'], $b['name']);
         });
