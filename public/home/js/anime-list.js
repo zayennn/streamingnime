@@ -12,8 +12,11 @@ let currentState = {
     itemsPerPage: 24
 };
 
-function initAnimeList(data) {
+let animeDetailBaseUrl = '';
+
+function initAnimeList(data, detailUrl) {
     animeData = data;
+    animeDetailBaseUrl = detailUrl;
     initializeFilters();
     renderAnimeList();
     document.getElementById('loadingSpinner').style.display = 'none';
@@ -171,7 +174,7 @@ function filterAnime() {
             case 'newest':
                 return b.year - a.year;
             case 'popular':
-                return b.rating - a.rating; 
+                return b.rating - a.rating;
             default:
                 return a.title.localeCompare(b.title);
         }
@@ -249,7 +252,8 @@ function createAnimeCard(anime) {
     `;
 
     card.addEventListener('click', function () {
-        alert(`Loading ${anime.title}...`);
+        const url = animeDetailBaseUrl.replace('__ID__', anime.id);
+        window.location.href = url;
     });
 
     return card;
@@ -289,7 +293,8 @@ function createAnimeListItem(anime) {
     `;
 
     item.addEventListener('click', function () {
-        alert(`Loading ${anime.title}...`);
+        const url = animeDetailBaseUrl.replace('__ID__', anime.id);
+        window.location.href = url;
     });
 
     return item;

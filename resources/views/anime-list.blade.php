@@ -196,21 +196,16 @@
     </div>
 @endsection
 
+
 @section('scripts')
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const animeData = @json($animeData);
-            window.AnimeList.init(animeData);
-        });
 
-        // Di function createAnimeCard
-        card.addEventListener('click', function() {
-            window.location.href = `/anime/${anime.id}`;
-        });
+            // template route dari laravel
+            const animeDetailBaseUrl = "{{ route('anime.detail', '__ID__') }}";
 
-        // Di function createAnimeListItem
-        item.addEventListener('click', function() {
-            window.location.href = `/anime/${anime.id}`;
+            window.AnimeList.init(animeData, animeDetailBaseUrl);
         });
     </script>
 @endsection
