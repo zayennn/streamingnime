@@ -239,7 +239,6 @@ class HomeController extends Controller
 
         $genreAnime = collect($genreAnime)->sortByDesc('rating')->values();
 
-        // Statistik genre
         $totalAnime = $genreAnime->count();
         $avgRating = round($genreAnime->avg('rating'), 1);
         $newestAnime = $genreAnime->sortByDesc('year')->first();
