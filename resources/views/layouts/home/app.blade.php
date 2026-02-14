@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="{{ asset('home/css/styles.css') }}">
     <link rel="stylesheet" href="{{ asset('home/css/anime-list.css') }}">
     <link rel="stylesheet" href="{{ asset('home/css/genre-list.css') }}">
+    <link rel="stylesheet" href="{{ asset('home/css/anime-detail.css') }}">
 
     {{-- poppins fonts --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
