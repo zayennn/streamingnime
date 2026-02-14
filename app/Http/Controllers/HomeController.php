@@ -237,7 +237,6 @@ class HomeController extends Controller
             abort(404);
         }
 
-        // Sort anime by rating
         $genreAnime = collect($genreAnime)->sortByDesc('rating')->values();
 
         // Statistik genre
