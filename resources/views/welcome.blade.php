@@ -117,7 +117,7 @@
             </div>
             <div class="anime-grid">
                 @foreach ($trending as $anime)
-                    <a href="/anime/{{ $anime['id'] }}" class="anime-card" style="text-decoration: none;">
+                    <a href="{{ route('anime.detail', $anime['id']) }}" class="anime-card" style="text-decoration: none;">
                         <div class="card-image">
                             <img src="{{ $anime['image'] }}" alt="{{ $anime['title'] }}">
 
