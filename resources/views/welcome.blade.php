@@ -117,37 +117,35 @@
             </div>
             <div class="anime-grid">
                 @foreach ($trending as $anime)
-                    <a href="/anime/{{ $anime['id'] }}" class="anime-card" style="text-decoration: none;">
-                        <div class="anime-card">
-                            <div class="card-image">
-                                <img src="{{ $anime['image'] }}" alt="{{ $anime['title'] }}">
+                    <div class="anime-card">
+                        <div class="card-image">
+                            <img src="{{ $anime['image'] }}" alt="{{ $anime['title'] }}">
 
-                                <div class="card-overlay">
-                                    <span class="episode">{{ $anime['episode'] }}</span>
-                                    <span class="rating">⭐ {{ $anime['rating'] }}</span>
-                                </div>
-
-                                @if ($anime['badge'])
-                                    <div class="card-badge">{{ $anime['badge'] }}</div>
-                                @endif
+                            <div class="card-overlay">
+                                <span class="episode">{{ $anime['episode'] }}</span>
+                                <span class="rating">⭐ {{ $anime['rating'] }}</span>
                             </div>
 
-                            <div class="card-content">
-                                <h3 class="card-title">{{ $anime['title'] }}</h3>
+                            @if ($anime['badge'])
+                                <div class="card-badge">{{ $anime['badge'] }}</div>
+                            @endif
+                        </div>
 
-                                <div class="card-genres">
-                                    @foreach ($anime['genres'] as $genre)
-                                        <span>{{ $genre }}</span>
-                                    @endforeach
-                                </div>
+                        <div class="card-content">
+                            <h3 class="card-title">{{ $anime['title'] }}</h3>
 
-                                <div class="card-info">
-                                    <span class="year">{{ $anime['year'] }}</span>
-                                    <span class="type">{{ $anime['type'] }}</span>
-                                </div>
+                            <div class="card-genres">
+                                @foreach ($anime['genres'] as $genre)
+                                    <span>{{ $genre }}</span>
+                                @endforeach
+                            </div>
+
+                            <div class="card-info">
+                                <span class="year">{{ $anime['year'] }}</span>
+                                <span class="type">{{ $anime['type'] }}</span>
                             </div>
                         </div>
-                    </a>
+                    </div>
                 @endforeach
             </div>
         </section>
