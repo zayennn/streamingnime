@@ -158,7 +158,6 @@ class HomeController extends Controller
             }
         }
 
-        // Ambil sample anime untuk setiap genre (3 anime terpopuler)
         $genres = [];
         $gradients = [
             'linear-gradient(135deg, #ff006e, #ff4d94)',
