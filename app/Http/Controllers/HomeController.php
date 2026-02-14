@@ -18,7 +18,7 @@ class HomeController extends Controller
         ->values()
         ->map(function ($item) {
             return [
-                'id' => $item['id'], // ← WAJIB
+                'id' => $item['id'],
                 'title' => $item['title'],
                 'image' => $item['image'],
                 'episode' => $item['episode'],
@@ -36,7 +36,7 @@ class HomeController extends Controller
         ->values()
         ->map(function ($item) {
             return [
-                'id' => $item['id'], // ← WAJIB
+                'id' => $item['id'],
                 'rank' => $item['rank'],
                 'title' => $item['title'],
                 'image' => $item['image'],
@@ -55,7 +55,7 @@ class HomeController extends Controller
         ->values()
         ->map(function ($item) {
             return [
-                'id' => $item['id'], // ← WAJIB
+                'id' => $item['id'],
                 'title' => $item['title'],
                 'image' => $item['image'],
                 'episode' => $item['episode'],
