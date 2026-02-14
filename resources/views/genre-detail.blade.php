@@ -1,283 +1,292 @@
 @extends('layouts.home.app')
 
 @section('content')
-    <div class="genre-detail-container">
-        <!-- Genre Hero -->
-        <section class="genre-detail-hero">
-            <div class="hero-content-wrapper">
-                <h1 class="hero-title">{{ $genreName }}</h1>
-                <p class="hero-subtitle">Discover the best {{ $genreName }} anime series and movies</p>
-                <div class="hero-stats">
-                    <div class="stat-item">
-                        <span class="stat-number">{{ $totalAnime }}</span>
-                        <span class="stat-label">Titles</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">⭐ {{ $avgRating }}</span>
-                        <span class="stat-label">Avg Rating</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">{{ $newestAnime['year'] }}</span>
-                        <span class="stat-label">Newest</span>
+<div class="anime-detail-container">
+    <!-- Simple Hero Section -->
+    <section class="anime-detail-hero">
+        <div class="hero-backdrop" style="background-image: url('{{ asset($anime['image']) }}')"></div>
+        <div class="hero-overlay"></div>
+        
+        <div class="hero-content">
+            <nav class="anime-breadcrumb">
+                <a href="/">Home</a>
+                <span class="separator">/</span>
+                <a href="/anime-list">Anime List</a>
+                <span class="separator">/</span>
+                <span class="current">{{ $anime['title'] }}</span>
+            </nav>
+            
+            <div class="anime-header">
+                <div class="anime-poster">
+                    <img src="{{ asset($anime['image']) }}" alt="{{ $anime['title'] }}">
+                    <div class="poster-badge badge-{{ $anime['status'] }}">
+                        {{ $anime['status'] === 'airing' ? 'ONGOING' : ($anime['status'] === 'completed' ? 'COMPLETED' : 'UPCOMING') }}
                     </div>
                 </div>
-            </div>
-            <div class="hero-overlay"></div>
-        </section>
-
-        <!-- Filter Bar -->
-        <section class="detail-filter-section">
-            <div class="filter-container">
-                <div class="filter-left">
-                    <a href="/genre" class="back-link">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                            stroke-linejoin="round">
-                            <line x1="19" y1="12" x2="5" y2="12"></line>
-                            <polyline points="12 19 5 12 12 5"></polyline>
-                        </svg>
-                        Back to Genres
-                    </a>
-                </div>
-                <div class="filter-right">
-                    <div class="search-box small">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                            stroke-linejoin="round">
-                            <circle cx="11" cy="11" r="8"></circle>
-                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                        </svg>
-                        <input type="text" id="animeSearch" placeholder="Search in {{ $genreName }}...">
-                    </div>
-                    <select id="sortAnime" class="sort-select small">
-                        <option value="rating">Sort by: Rating</option>
-                        <option value="title">Sort by: Title A-Z</option>
-                        <option value="year">Sort by: Newest</option>
-                        <option value="episodes">Sort by: Episodes</option>
-                    </select>
-                    <div class="view-toggle">
-                        <button class="view-btn active" data-view="grid">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <rect x="3" y="3" width="7" height="7"></rect>
-                                <rect x="14" y="3" width="7" height="7"></rect>
-                                <rect x="14" y="14" width="7" height="7"></rect>
-                                <rect x="3" y="14" width="7" height="7"></rect>
+                
+                <div class="anime-info">
+                    <h1 class="anime-title">{{ $anime['title'] }}</h1>
+                    
+                    <div class="anime-meta">
+                        <span class="meta-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
                             </svg>
-                        </button>
-                        <button class="view-btn" data-view="list">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <line x1="8" y1="6" x2="21" y2="6"></line>
-                                <line x1="8" y1="12" x2="21" y2="12"></line>
-                                <line x1="8" y1="18" x2="21" y2="18"></line>
-                                <line x1="3" y1="6" x2="3.01" y2="6"></line>
-                                <line x1="3" y1="12" x2="3.01" y2="12"></line>
-                                <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                            {{ $anime['year'] }}
+                        </span>
+                        <span class="meta-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                                <path d="M2 8h20"></path>
                             </svg>
+                            {{ $anime['type'] }}
+                        </span>
+                        <span class="meta-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                            </svg>
+                            {{ $anime['episodes'] }} Episodes
+                        </span>
+                        <span class="meta-item rating">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                            </svg>
+                            {{ $anime['rating'] }}
+                        </span>
+                    </div>
+                    
+                    <div class="anime-genres">
+                        @foreach($anime['genres'] as $genre)
+                            <a href="/genre/{{ Str::slug($genre) }}" class="genre-tag">{{ $genre }}</a>
+                        @endforeach
+                    </div>
+                    
+                    @if($anime['status'] === 'airing')
+                    <div class="airing-info">
+                        <span class="airing-badge">
+                            <span class="pulse"></span>
+                            {{ $anime['airing'] }} • Every {{ $anime['time'] }}
+                        </span>
+                    </div>
+                    @endif
+                    
+                    <div class="anime-actions">
+                        <button class="btn-primary watch-now">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                            </svg>
+                            Watch Now
+                        </button>
+                        <button class="btn-secondary add-to-list">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                            Add to List
                         </button>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Anime List -->
-        <main class="genre-anime-main">
-            <div class="list-header">
-                <h2 class="list-title">
-                    All {{ $genreName }} Anime
-                    <span class="title-count">({{ $totalAnime }} titles)</span>
-                </h2>
-            </div>
+    <!-- Main Content -->
+    <main class="anime-detail-main">
+        <div class="content-grid">
+            <!-- Left Column -->
+            <div class="detail-left">
+                <!-- Synopsis -->
+                <section class="detail-card">
+                    <h2 class="card-title">Synopsis</h2>
+                    <p class="synopsis">{{ $anime['description'] }}</p>
+                </section>
 
-            <div class="anime-results grid-view" id="animeResults">
-                @foreach ($genreAnime as $anime)
-                    <a href="{{ route('anime.detail', $anime['id']) }}" class="anime-card-grid"
-                        style="text-decoration: none;" data-title="{{ strtolower($anime['title']) }}"
-                        data-rating="{{ $anime['rating'] }}" data-year="{{ $anime['year'] }}"
-                        data-episodes="{{ $anime['episodes'] }}">
-                        <div class="card-image">
-                            {{-- <img src="{{ $anime['image'] }}" alt="{{ $anime['title'] }}" loading="lazy"> --}}
-                            <img src="{{ asset($anime['image']) }}" alt="{{ $anime['title'] }}" loading="lazy">
-                            <div class="card-badge badge-{{ $anime['status'] }}">
-                                {{ $anime['status'] === 'airing' ? 'Ongoing' : ($anime['status'] === 'completed' ? 'Completed' : 'Upcoming') }}
-                            </div>
-                            <div class="card-rating">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                    viewBox="0 0 24 24" fill="#ffd700" stroke="#ffd700" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round">
-                                    <polygon
-                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                                    </polygon>
-                                </svg>
-                                {{ $anime['rating'] }}
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <h3 class="card-title">{{ $anime['title'] }}</h3>
-                            <div class="card-info">
-                                <span>{{ $anime['year'] }}</span>
-                                <span>{{ $anime['type'] }}</span>
-                                <span>{{ $anime['episodes'] }} eps</span>
-                            </div>
-                            <div class="card-genres">
-                                @foreach (array_slice($anime['genres'], 0, 2) as $genre)
-                                    <span>{{ $genre }}</span>
-                                @endforeach
-                                @if (count($anime['genres']) > 2)
-                                    <span>+{{ count($anime['genres']) - 2 }} more</span>
+                <!-- Episodes List -->
+                <section class="detail-card">
+                    <div class="card-header">
+                        <h2 class="card-title">Episodes</h2>
+                        <span class="episode-count">{{ $anime['episodes'] }} episodes</span>
+                    </div>
+                    
+                    <div class="episodes-grid">
+                        @php
+                            $totalEpisodes = is_numeric($anime['episodes']) ? (int)$anime['episodes'] : 12;
+                            $episodeCount = min($totalEpisodes, 24); // Show max 24 episodes initially
+                        @endphp
+                        
+                        @for($i = 1; $i <= $episodeCount; $i++)
+                        <a href="#" class="episode-item" onclick="alert('Episode {{ $i }} coming soon!'); return false;">
+                            <div class="episode-number">Episode {{ $i }}</div>
+                            <div class="episode-title">
+                                @if($i == 1)
+                                    {{ $anime['title'] }} - Episode 1
+                                @elseif($i <= 12)
+                                    Episode {{ $i }}
+                                @else
+                                    Episode {{ $i }}
                                 @endif
                             </div>
+                            <div class="episode-duration">{{ $anime['duration'] ?? '24m' }}</div>
+                        </a>
+                        @endfor
+                        
+                        @if($totalEpisodes > 24)
+                        <button class="load-more-episodes" onclick="alert('Load more episodes coming soon!')">
+                            Show More Episodes
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        @endif
+                    </div>
+                </section>
+            </div>
+
+            <!-- Right Column -->
+            <div class="detail-right">
+                <!-- Information Card -->
+                <section class="detail-card">
+                    <h2 class="card-title">Information</h2>
+                    <div class="info-list">
+                        <div class="info-row">
+                            <span class="info-label">Studio</span>
+                            <span class="info-value">{{ $anime['studio'] ?? 'TBA' }}</span>
                         </div>
-                    </a>
-                @endforeach
-            </div>
+                        <div class="info-row">
+                            <span class="info-label">Duration</span>
+                            <span class="info-value">{{ $anime['duration'] ?? '24 min per episode' }}</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Aired</span>
+                            <span class="info-value">{{ $anime['aired'] ?? $anime['year'] }}</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Status</span>
+                            <span class="info-value status-{{ $anime['status'] }}">
+                                {{ $anime['status'] === 'airing' ? 'Airing' : ($anime['status'] === 'completed' ? 'Completed' : 'Upcoming') }}
+                            </span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Rating</span>
+                            <span class="info-value rating">⭐ {{ $anime['rating'] }}/10</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Rank</span>
+                            <span class="info-value">#{{ $anime['rank'] ?? 'N/A' }}</span>
+                        </div>
+                    </div>
+                </section>
 
-            <!-- No Results Message -->
-            <div class="no-results" id="noResults" style="display: none;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24"
-                    fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <line x1="15" y1="9" x2="9" y2="15"></line>
-                    <line x1="9" y1="9" x2="15" y2="15"></line>
-                </svg>
-                <h3>No anime found</h3>
-                <p>Try searching with different keywords</p>
-            </div>
-        </main>
+                <!-- Related Anime -->
+                @if(isset($relatedAnime) && count($relatedAnime) > 0)
+                <section class="detail-card">
+                    <h2 class="card-title">You May Also Like</h2>
+                    <div class="related-list">
+                        @foreach($relatedAnime as $related)
+                        <a href="/anime/{{ $related['id'] }}" class="related-item">
+                            <div class="related-image">
+                                <img src="{{ asset($related['image']) }}" alt="{{ $related['title'] }}">
+                            </div>
+                            <div class="related-content">
+                                <h4 class="related-title">{{ $related['title'] }}</h4>
+                                <div class="related-meta">
+                                    <span>⭐ {{ $related['rating'] }}</span>
+                                    <span>{{ $related['year'] }}</span>
+                                </div>
+                            </div>
+                        </a>
+                        @endforeach
+                    </div>
+                </section>
+                @endif
 
-        <!-- Other Genres Section -->
-        <section class="other-genres-section">
-            <div class="section-header">
-                <h2 class="section-title">
-                    <span class="title-gradient">Other Genres You Might Like</span>
-                </h2>
+                <!-- Share -->
+                <section class="detail-card">
+                    <h2 class="card-title">Share</h2>
+                    <div class="share-buttons">
+                        <button class="share-btn" onclick="alert('Share on Facebook')">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </button>
+                        <button class="share-btn" onclick="alert('Share on Twitter')">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                            </svg>
+                        </button>
+                        <button class="share-btn" onclick="copyToClipboard()">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="2" y1="12" x2="22" y2="12"></line>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </section>
             </div>
-            <div class="other-genres-grid">
-                @foreach ($otherGenres as $genre)
-                    <a href="/genre/{{ $genre['slug'] }}" class="other-genre-item">
-                        <span class="genre-name">{{ $genre['name'] }}</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                            stroke-linejoin="round">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                            <polyline points="12 5 19 12 12 19"></polyline>
-                        </svg>
-                    </a>
-                @endforeach
-            </div>
-        </section>
-    </div>
+        </div>
+    </main>
+</div>
 @endsection
 
 @section('scripts')
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const animeCards = document.querySelectorAll('.anime-card-grid');
-            const searchInput = document.getElementById('animeSearch');
-            const sortSelect = document.getElementById('sortAnime');
-            const viewBtns = document.querySelectorAll('.view-btn');
-            const animeResults = document.getElementById('animeResults');
-            const noResults = document.getElementById('noResults');
+<script>
+function copyToClipboard() {
+    navigator.clipboard.writeText(window.location.href);
+    alert('Link copied to clipboard!');
+}
 
-            let currentView = 'grid';
-
-            function filterAnime() {
-                const searchTerm = searchInput.value.toLowerCase().trim();
-                let visibleCount = 0;
-
-                animeCards.forEach(card => {
-                    const title = card.dataset.title;
-                    if (searchTerm === '' || title.includes(searchTerm)) {
-                        card.style.display = '';
-                        visibleCount++;
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-
-                if (visibleCount === 0) {
-                    noResults.style.display = 'block';
-                    animeResults.style.display = 'none';
-                } else {
-                    noResults.style.display = 'none';
-                    animeResults.style.display = 'grid';
-                }
+document.addEventListener('DOMContentLoaded', function() {
+    // Watch Now button
+    const watchBtn = document.querySelector('.watch-now');
+    if (watchBtn) {
+        watchBtn.addEventListener('click', function() {
+            const firstEpisode = document.querySelector('.episode-item');
+            if (firstEpisode) {
+                firstEpisode.scrollIntoView({ behavior: 'smooth' });
+                firstEpisode.classList.add('highlight');
+                setTimeout(() => firstEpisode.classList.remove('highlight'), 2000);
+            } else {
+                alert('Episodes coming soon!');
             }
-
-            function sortAnime() {
-                const cardsArray = Array.from(animeCards);
-                const sortBy = sortSelect.value;
-
-                cardsArray.sort((a, b) => {
-                    const ratingA = parseFloat(a.dataset.rating);
-                    const ratingB = parseFloat(b.dataset.rating);
-                    const titleA = a.dataset.title;
-                    const titleB = b.dataset.title;
-                    const yearA = parseInt(a.dataset.year);
-                    const yearB = parseInt(b.dataset.year);
-                    const episodesA = parseInt(a.dataset.episodes) || 0;
-                    const episodesB = parseInt(b.dataset.episodes) || 0;
-
-                    switch (sortBy) {
-                        case 'rating':
-                            return ratingB - ratingA;
-                        case 'title':
-                            return titleA.localeCompare(titleB);
-                        case 'year':
-                            return yearB - yearA;
-                        case 'episodes':
-                            return episodesB - episodesA;
-                        default:
-                            return 0;
-                    }
-                });
-
-                cardsArray.forEach(card => {
-                    animeResults.appendChild(card);
-                });
-            }
-
-            function toggleView(view) {
-                currentView = view;
-                animeResults.className = `anime-results ${view}-view`;
-
-                viewBtns.forEach(btn => {
-                    if (btn.dataset.view === view) {
-                        btn.classList.add('active');
-                    } else {
-                        btn.classList.remove('active');
-                    }
-                });
-            }
-
-            if (searchInput) {
-                searchInput.addEventListener('input', filterAnime);
-            }
-
-            if (sortSelect) {
-                sortSelect.addEventListener('change', sortAnime);
-            }
-
-            viewBtns.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    toggleView(this.dataset.view);
-                });
-            });
-
-            animeCards.forEach(card => {
-                // card.addEventListener('click', function() {
-                //     alert(`Loading ${title}...`);
-                // });
-                card.addEventListener('click', function() {
-                    const title = this.querySelector('.card-title').textContent;
-                    const url = animeDetailBaseUrl.replace('__ID__', anime.id);
-                    window.location.href = url;
-                });
-            });
         });
-    </script>
+    }
+
+    // Add to List button
+    const addToListBtn = document.querySelector('.add-to-list');
+    if (addToListBtn) {
+        addToListBtn.addEventListener('click', function() {
+            this.classList.toggle('active');
+            const icon = this.querySelector('svg');
+            if (this.classList.contains('active')) {
+                this.innerHTML = `
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 6L9 17l-5-5"></path>
+                    </svg>
+                    Added to List
+                `;
+            } else {
+                this.innerHTML = `
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                    Add to List
+                `;
+            }
+        });
+    }
+
+    // Episode item click
+    document.querySelectorAll('.episode-item').forEach(ep => {
+        ep.addEventListener('click', function(e) {
+            e.preventDefault();
+            const episodeNum = this.querySelector('.episode-number').textContent;
+            alert(`Playing ${episodeNum} - This is a demo. Video player coming soon!`);
+        });
+    });
+});
+</script>
 @endsection
