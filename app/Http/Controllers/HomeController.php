@@ -270,4 +270,30 @@ class HomeController extends Controller
             'page' => $genreName . ' Anime',
         ]);
     }
+
+    public function animeDetail($id)
+    {
+        $animeData = collect(require app_path('Data/animeData.php'));
+        
+        $anime = $animeData->firstWhere('id', $id);
+        
+        if (!$anime) {
+            abort(404);
+        }
+
+        // Get related anime by same genres
+        $relatedAnime = $animeData
+            ->filter(function ($item) use ($anime, $id) {
+                if ($item['id'] == $id) return false;
+                $commonGenres = array_intersect($item['genres'], $anime['genres']);
+                return count($commonGenres) > 0;
+            })
+            ->sortByDesc('rating')
+            ->take(6)
+            ->values();
+
+        return view('anime-detail', compact('anime', 'relatedAnime'), [
+            'page' => $anime['title'],
+        ]);
+    }
 }
