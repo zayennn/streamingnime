@@ -160,7 +160,7 @@
             </div>
             <div class="ongoing-grid">
                 @foreach ($ongoing as $anime)
-                    <div class="ongoing-item">
+                    <a href="{{ route('anime.detail', $anime['id']) }}" class="ongoing-item" style="text-decoration: none;">
                         <div class="ongoing-image">
                             <img src="{{ $anime['image'] }}" alt="{{ $anime['title'] }}">
                         </div>
@@ -173,7 +173,7 @@
                                 <span class="time">{{ $anime['time'] }}</span>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 @endforeach
             </div>
         </section>
@@ -188,7 +188,7 @@
             </div>
             <div class="top-rated-list">
                 @foreach ($topRated as $anime)
-                    <div class="top-rated-item">
+                    <a href="{{ route('anime.detail', $anime['id']) }}" class="top-rated-item" style="text-decoration: none;">
                         <span class="rank">{{ $anime['rank'] }}</span>
 
                         <div class="top-rated-image">
@@ -210,7 +210,7 @@
                                 @endforeach
                             </div>
                         </div>
-                    </div>
+                    </a>
                 @endforeach
             </div>
         </section>

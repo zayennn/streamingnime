@@ -11,20 +11,20 @@ class HomeController extends Controller
     {
         $anime = collect(require app_path('Data/animeData.php'));
 
-        $trending = $anime
+       $trending = $anime
         ->filter(fn ($a) => isset($a['badge']) && in_array($a['badge'], ['Hot', 'New']))
         ->sortByDesc('rating')
         ->take(5)
         ->values()
         ->map(function ($item) {
             return [
-                'id' => $item['id'],
+                'id' => $item['id'], // ← WAJIB
                 'title' => $item['title'],
                 'image' => $item['image'],
                 'episode' => $item['episode'],
                 'rating' => $item['rating'],
-                'badge' => $item['badge'],
-                'genres' => $item['genres'],
+                'badge' => $item['badge'] ?? null,
+                'genres' => $item['genres'] ?? [],
                 'year' => $item['year'],
                 'type' => $item['type'],
             ];
@@ -47,20 +47,21 @@ class HomeController extends Controller
             });
 
         $ongoing = $anime
-            ->where('status', 'airing')
-            ->whereNotNull('airing')
-            ->sortByDesc('rating')
-            ->take(5)
-            ->values()
-            ->map(function ($item) {
-                return [
-                    'title' => $item['title'],
-                    'image' => $item['image'],
-                    'episode' => $item['episode'],
-                    'airing' => $item['airing'],
-                    'time' => $item['time'],
-                ];
-            });
+        ->where('status', 'airing')
+        ->whereNotNull('airing')
+        ->sortByDesc('rating')
+        ->take(5)
+        ->values()
+        ->map(function ($item) {
+            return [
+                'id' => $item['id'], // ← WAJIB
+                'title' => $item['title'],
+                'image' => $item['image'],
+                'episode' => $item['episode'],
+                'airing' => $item['airing'],
+                'time' => $item['time'],
+            ];
+        });
 
         $allAnimeWithGenres = $anime->whereNotNull('genres');
         $genreCounter = [];
