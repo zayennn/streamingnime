@@ -220,7 +220,6 @@ class HomeController extends Controller
     {
         $animeData = collect(require app_path('Data/animeData.php'));
         
-        // Cari genre berdasarkan slug
         $genreName = null;
         $genreAnime = [];
         
