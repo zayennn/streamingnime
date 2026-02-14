@@ -202,7 +202,6 @@ class HomeController extends Controller
             return strcmp($a['name'], $b['name']);
         });
 
-        // Statistik
         $totalGenres = count($genres);
         $totalAnime = $animeData->count();
         $mostPopularGenre = collect($genreCounts)->sortByDesc('count')->keys()->first();
