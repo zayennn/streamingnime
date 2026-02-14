@@ -94,9 +94,9 @@
 
             <div class="anime-results grid-view" id="animeResults">
                 @foreach ($genreAnime as $anime)
-                    <div class="anime-card-grid" data-title="{{ strtolower($anime['title']) }}"
-                        data-rating="{{ $anime['rating'] }}" data-year="{{ $anime['year'] }}"
-                        data-episodes="{{ $anime['episodes'] }}">
+                    <a href="{{ route('anime.detail', $anime['id']) }}" class="anime-card-grid" style="text-decoration: none;"
+                        data-title="{{ strtolower($anime['title']) }}" data-rating="{{ $anime['rating'] }}"
+                        data-year="{{ $anime['year'] }}" data-episodes="{{ $anime['episodes'] }}">
                         <div class="card-image">
                             {{-- <img src="{{ $anime['image'] }}" alt="{{ $anime['title'] }}" loading="lazy"> --}}
                             <img src="{{ asset($anime['image']) }}" alt="{{ $anime['title'] }}" loading="lazy">
@@ -130,7 +130,7 @@
                                 @endif
                             </div>
                         </div>
-                    </div>
+                    </a>
                 @endforeach
             </div>
 
