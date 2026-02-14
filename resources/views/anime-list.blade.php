@@ -202,5 +202,15 @@
             const animeData = @json($animeData);
             window.AnimeList.init(animeData);
         });
+
+        // Di function createAnimeCard
+        card.addEventListener('click', function() {
+            window.location.href = `/anime/${anime.id}`;
+        });
+
+        // Di function createAnimeListItem
+        item.addEventListener('click', function() {
+            window.location.href = `/anime/${anime.id}`;
+        });
     </script>
 @endsection

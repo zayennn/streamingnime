@@ -117,7 +117,7 @@
             </div>
             <div class="anime-grid">
                 @foreach ($trending as $anime)
-                    <div class="anime-card">
+                    <a href="/anime/{{ $anime['id'] }}" class="anime-card" style="text-decoration: none;">
                         <div class="card-image">
                             <img src="{{ $anime['image'] }}" alt="{{ $anime['title'] }}">
 
@@ -145,7 +145,7 @@
                                 <span class="type">{{ $anime['type'] }}</span>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 @endforeach
             </div>
         </section>
