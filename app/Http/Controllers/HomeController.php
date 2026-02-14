@@ -31,21 +31,21 @@ class HomeController extends Controller
         });
 
         $topRated = $anime
-    ->where('rank', '>', 0)
-    ->sortBy('rank')
-    ->values()
-    ->map(function ($item) {
-        return [
-            'id' => $item['id'], // ← WAJIB
-            'rank' => $item['rank'],
-            'title' => $item['title'],
-            'image' => $item['image'],
-            'score' => $item['score'],
-            'episodes' => $item['episodes'],
-            'year' => $item['year'],
-            'genres' => $item['genres'] ?? [],
-        ];
-    });
+        ->where('rank', '>', 0)
+        ->sortBy('rank')
+        ->values()
+        ->map(function ($item) {
+            return [
+                'id' => $item['id'], // ← WAJIB
+                'rank' => $item['rank'],
+                'title' => $item['title'],
+                'image' => $item['image'],
+                'score' => $item['score'],
+                'episodes' => $item['episodes'],
+                'year' => $item['year'],
+                'genres' => $item['genres'] ?? [],
+            ];
+        });
 
         $ongoing = $anime
         ->where('status', 'airing')
