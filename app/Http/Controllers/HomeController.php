@@ -61,7 +61,6 @@ class HomeController extends Controller
                 ];
             });
 
-        // Generate genre stats from all anime
         $allAnimeWithGenres = $anime->whereNotNull('genres');
         $genreCounter = [];
 
