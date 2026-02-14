@@ -144,7 +144,6 @@ class HomeController extends Controller
     {
         $animeData = collect(require app_path('Data/animeData.php'));
 
-        // Hitung jumlah anime per genre
         $genreCounts = [];
         foreach ($animeData as $anime) {
             foreach ($anime['genres'] as $genre) {
