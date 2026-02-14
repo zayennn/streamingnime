@@ -94,9 +94,10 @@
 
             <div class="anime-results grid-view" id="animeResults">
                 @foreach ($genreAnime as $anime)
-                    <a href="{{ route('anime.detail', $anime['id']) }}" class="anime-card-grid" style="text-decoration: none;"
-                        data-title="{{ strtolower($anime['title']) }}" data-rating="{{ $anime['rating'] }}"
-                        data-year="{{ $anime['year'] }}" data-episodes="{{ $anime['episodes'] }}">
+                    <a href="{{ route('anime.detail', $anime['id']) }}" class="anime-card-grid"
+                        style="text-decoration: none;" data-title="{{ strtolower($anime['title']) }}"
+                        data-rating="{{ $anime['rating'] }}" data-year="{{ $anime['year'] }}"
+                        data-episodes="{{ $anime['episodes'] }}">
                         <div class="card-image">
                             {{-- <img src="{{ $anime['image'] }}" alt="{{ $anime['title'] }}" loading="lazy"> --}}
                             <img src="{{ asset($anime['image']) }}" alt="{{ $anime['title'] }}" loading="lazy">
@@ -268,9 +269,13 @@
             });
 
             animeCards.forEach(card => {
+                // card.addEventListener('click', function() {
+                //     alert(`Loading ${title}...`);
+                // });
                 card.addEventListener('click', function() {
                     const title = this.querySelector('.card-title').textContent;
-                    alert(`Loading ${title}...`);
+                    const url = animeDetailBaseUrl.replace('__ID__', anime.id);
+                    window.location.href = url;
                 });
             });
         });
