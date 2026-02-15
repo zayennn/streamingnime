@@ -85,9 +85,6 @@ updateNavbarHeight();
 window.addEventListener("resize", updateNavbarHeight);
 window.addEventListener("scroll", updateNavbarHeight);
 
-// app.js - Global JavaScript file
-
-// Common functions that can be used across the site
 function debounce(func, wait) {
     let timeout;
     return function executedFunction(...args) {
