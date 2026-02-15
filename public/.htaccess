@@ -64,7 +64,6 @@ AddOutputFilterByType DEFLATE text/xml
     # X-Content-Type-Options
     Header set X-Content-Type-Options nosniff
     
-    # X-XSS-Protection
     Header set X-XSS-Protection "1; mode=block"
     
     Header set Referrer-Policy "strict-origin-when-cross-origin"
