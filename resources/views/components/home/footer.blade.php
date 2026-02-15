@@ -81,7 +81,7 @@
                 <div class="link-column">
                     <h3 class="link-title">Community</h3>
                     <ul class="link-list">
-                        <li><a href="/forum">Forums</a></li>
+                        <li><a href="/">Forums</a></li>
                         <li><a href="/blog">Blog</a></li>
                         <li><a href="/discord">Discord Server</a></li>
                         <li><a href="/recommendations">Recommendations</a></li>
