@@ -212,7 +212,6 @@ function initNewsletter() {
     }
 }
 
-// Initialize all functions when DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
     initMobileMenu();
     initBackToTop();
