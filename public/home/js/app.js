@@ -166,7 +166,6 @@ function initMobileMenu() {
             document.body.style.overflow = '';
         });
 
-        // Close menu when clicking on a nav link (for mobile)
         navMenu.querySelectorAll('.nav__link').forEach(link => {
             link.addEventListener('click', function() {
                 hamburger.checked = false;
