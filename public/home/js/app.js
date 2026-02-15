@@ -100,7 +100,6 @@ function debounce(func, wait) {
     };
 }
 
-// Smooth scroll to top
 function scrollToTop() {
     window.scrollTo({
         top: 0,
