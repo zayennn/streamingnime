@@ -228,11 +228,9 @@
                     genreResults.appendChild(card);
                 });
                 
-                // Re-apply search filter after sorting
                 filterGenres();
             }
 
-            // Toggle view (grid/list)
             function toggleView(view) {
                 currentView = view;
                 genreResults.className = `genre-results ${view}-view`;
@@ -246,7 +244,6 @@
                 });
             }
 
-            // Event Listeners
             if (searchInput) {
                 searchInput.addEventListener('input', filterGenres);
             }
