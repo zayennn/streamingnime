@@ -150,6 +150,10 @@
 }
 
 @media screen and (max-width: 992px) {
+    .navbar__container.scrolled {
+        padding: 1rem 1.5rem;
+    }
+
     .hamburger {
         display: block;
     }
