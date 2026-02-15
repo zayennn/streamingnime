@@ -4,6 +4,9 @@
     box-sizing: border-box;
     scrollbar-width: thin;
     scrollbar-color: #8338ec rgba(255, 255, 255, 0.08);
+}
+
+html {
     scroll-behavior: smooth;
 }
 
@@ -17,23 +20,19 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(
-        180deg,
-        #ff006e,
-        #8338ec,
-        #3a86ff
-    );
+    background: linear-gradient(180deg,
+            #ff006e,
+            #8338ec,
+            #3a86ff);
     border-radius: 100px;
     border: 2px solid rgba(0, 0, 0, 0.4);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(
-        180deg,
-        #ff4d94,
-        #9d5cff,
-        #5fa8ff
-    );
+    background: linear-gradient(180deg,
+            #ff4d94,
+            #9d5cff,
+            #5fa8ff);
 }
 
 body {
