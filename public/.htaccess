@@ -67,7 +67,6 @@ AddOutputFilterByType DEFLATE text/xml
     # X-XSS-Protection
     Header set X-XSS-Protection "1; mode=block"
     
-    # Referrer-Policy
     Header set Referrer-Policy "strict-origin-when-cross-origin"
     
     Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
