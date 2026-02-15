@@ -188,7 +188,6 @@ function initNewsletter() {
             const email = this.querySelector('.newsletter-input').value;
             
             if (email) {
-                // Simulate form submission
                 this.innerHTML = `
                     <div class="success-message" style="
                         background: rgba(0, 255, 136, 0.1);
