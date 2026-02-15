@@ -151,7 +151,7 @@
 @section('scripts')
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            console.log('Genre list script loaded'); // Debug
+            console.log('Genre list script loaded');
             
             const genreCards = document.querySelectorAll('.genre-card-wrapper');
             const searchInput = document.getElementById('genreSearch');
