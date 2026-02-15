@@ -58,7 +58,6 @@ AddOutputFilterByType DEFLATE text/xml
 
 # Security headers
 <IfModule mod_headers.c>
-    # X-Frame-Options
     Header always append X-Frame-Options SAMEORIGIN
     
     Header set X-Content-Type-Options nosniff
