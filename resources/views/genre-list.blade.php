@@ -285,7 +285,6 @@
                 });
             }
 
-            // Initial sort to ensure order
             sortGenres();
         });
     </script>
