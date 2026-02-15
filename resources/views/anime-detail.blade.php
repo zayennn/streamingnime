@@ -281,7 +281,6 @@
                 );
             }
 
-            // Create episode element
             function createEpisodeElement(episode) {
                 const div = document.createElement('div');
                 div.className = 'episode-item';
