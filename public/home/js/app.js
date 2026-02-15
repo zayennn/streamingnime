@@ -108,7 +108,6 @@ function scrollToTop() {
     });
 }
 
-// Back to top button functionality
 function initBackToTop() {
     const backToTopBtn = document.querySelector('.back-to-top');
     
