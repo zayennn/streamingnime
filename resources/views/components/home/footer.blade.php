@@ -163,10 +163,10 @@
                 </div>
 
                 <div class="footer-bottom-links">
-                    <a href="/dmca">DMCA</a>
-                    <a href="/sitemap">Sitemap</a>
-                    <a href="/report">Report</a>
-                    <a href="/status">Status</a>
+                    <a href="/">DMCA</a>
+                    <a href="/">Sitemap</a>
+                    <a href="/">Report</a>
+                    <a href="/">Status</a>
                 </div>
             </div>
 
