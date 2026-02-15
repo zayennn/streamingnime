@@ -6,6 +6,7 @@
 }
 
 /* Hero Section */
+/* Hero Section */
 .genre-hero,
 .genre-detail-hero {
     height: 400px;
@@ -20,20 +21,16 @@
     text-align: center;
 }
 
-.genre-detail-hero {
-    background: linear-gradient(135deg, rgba(255, 0, 110, 0.3), rgba(131, 56, 236, 0.3), rgba(58, 134, 255, 0.3)),
-        url('/images/slider hero/black-clover.jpg');
-}
-
 .hero-overlay {
     position: absolute;
     inset: 0;
     background: rgba(2, 0, 12, 0.7);
+    z-index: 1;
 }
 
 .hero-content-wrapper {
     position: relative;
-    z-index: 100;
+    z-index: 10;
     max-width: 800px;
     text-align: center;
     padding: 3rem;
