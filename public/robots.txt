@@ -1,2 +1,24 @@
+# robots.txt for StreamingNime
 User-agent: *
-Disallow:
+Allow: /
+Disallow: /admin/
+Disallow: /login/
+Disallow: /register/
+Disallow: /password/
+Disallow: /search?q=*
+Disallow: /*?page=*
+Disallow: /*?sort=*
+Disallow: /*?filter=*
+Disallow: /vendor/
+Disallow: /storage/
+Disallow: /cache/
+Disallow: /tmp/
+
+# Sitemap
+Sitemap: https://streamingnime.great-site.net/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 10
+
+# Host
+Host: https://streamingnime.great-site.net
