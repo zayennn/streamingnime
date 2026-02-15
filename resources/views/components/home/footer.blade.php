@@ -188,7 +188,6 @@
         const backToTopBtn = document.querySelector('.back-to-top');
 
         if (backToTopBtn) {
-            // Initially hide the button
             backToTopBtn.style.opacity = '0';
             backToTopBtn.style.visibility = 'hidden';
             backToTopBtn.style.transform = 'translateY(20px)';
