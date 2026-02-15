@@ -85,7 +85,7 @@
                         <li><a href="/">Blog</a></li>
                         <li><a href="/">Discord Server</a></li>
                         <li><a href="/">Recommendations</a></li>
-                        <li><a href="/support">Support</a></li>
+                        <li><a href="/">Support</a></li>
                     </ul>
                 </div>
 
