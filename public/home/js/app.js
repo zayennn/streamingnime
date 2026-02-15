@@ -218,7 +218,6 @@ document.addEventListener('DOMContentLoaded', function() {
     initBackToTop();
     initNewsletter();
     
-    // Anime card hover effects for home page (if exists)
     document.querySelectorAll('.anime-card').forEach(card => {
         card.addEventListener('mouseenter', function() {
             this.style.transform = 'translateY(-10px)';
