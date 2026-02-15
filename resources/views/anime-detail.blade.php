@@ -275,7 +275,6 @@
                 );
             }
 
-            // Sort episodes
             function sortEpisodes(list) {
                 return [...list].sort((a, b) =>
                     sort === 'asc' ? a.number - b.number : b.number - a.number
