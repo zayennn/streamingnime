@@ -6,9 +6,9 @@
 
 /* Hero Section */
 .anime-list-hero {
-    height: 300px;
+    height: 400px;
     background: linear-gradient(135deg, rgba(255, 0, 110, 0.2), rgba(131, 56, 236, 0.2), rgba(58, 134, 255, 0.2)),
-        url('https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+        url('/images/slider hero/black-clover.jpg') no-repeat center;
     background-size: cover;
     background-position: center;
     position: relative;
@@ -29,7 +29,7 @@
     position: relative;
     z-index: 2;
     max-width: 800px;
-    padding: 2rem;
+    /* padding: 2rem; */
 }
 
 .hero-title {
@@ -682,7 +682,7 @@
 
 @media screen and (max-width: 768px) {
     .anime-list-hero {
-        height: 250px;
+        height: 400px;
     }
 
     .hero-title {
