@@ -45,7 +45,7 @@
 /* Anime Poster */
 .anime-poster {
     flex-shrink: 0;
-    width: 300px;
+    width: auto;
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5);
@@ -671,57 +671,62 @@
     .content-wrapper {
         grid-template-columns: 1fr;
     }
-    
+
     .anime-poster {
         width: 250px;
     }
-    
+
     .anime-title {
         font-size: 2.5rem;
     }
 }
 
 @media screen and (max-width: 992px) {
-    .hero-content-wrapper {
+    .hero-content-wrapper-anime-detail {
         flex-direction: column;
         align-items: center;
         text-align: center;
         gap: 2rem;
     }
-    
+
     .anime-poster {
-        width: 200px;
+        width: auto;
     }
-    
+
+    .anime-poster img {
+        width: 100%;
+        height: auto;
+    }
+
     .info-header {
         justify-content: center;
     }
-    
+
     .anime-meta {
         justify-content: center;
     }
-    
+
     .anime-genres {
         justify-content: center;
     }
-    
+
     .anime-actions {
         justify-content: center;
     }
-    
+
     .episodes-header {
         flex-direction: column;
         align-items: flex-start;
     }
-    
+
     .episodes-controls {
         width: 100%;
     }
-    
+
     .episodes-search {
         flex: 1;
     }
-    
+
     .related-grid {
         grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     }
@@ -733,48 +738,48 @@
         min-height: 400px;
         padding: 2rem 0;
     }
-    
-    .hero-content-wrapper {
+
+    .hero-content-wrapper-anime-detail {
         padding: 1rem;
     }
-    
+
     .anime-title {
         font-size: 2rem;
     }
-    
+
     .anime-meta {
         gap: 1rem;
     }
-    
+
     .meta-item {
         font-size: 0.85rem;
     }
-    
+
     .content-left,
     .content-right {
         padding: 1.5rem;
     }
-    
+
     .episode-item {
         flex-wrap: wrap;
     }
-    
+
     .episode-number {
         width: 30px;
         height: 30px;
         font-size: 0.8rem;
     }
-    
+
     .episode-thumbnail {
         width: 60px;
         height: 35px;
     }
-    
+
     .watch-episode-btn {
         width: 100%;
         justify-content: center;
     }
-    
+
     .related-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -784,31 +789,31 @@
     .anime-actions {
         flex-direction: column;
     }
-    
+
     .anime-actions button {
         width: 100%;
         justify-content: center;
     }
-    
+
     .episodes-controls {
         flex-direction: column;
     }
-    
+
     .episodes-search,
     .episodes-sort {
         width: 100%;
     }
-    
+
     .info-row {
         flex-direction: column;
         align-items: flex-start;
         gap: 0.3rem;
     }
-    
+
     .related-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .related-image {
         height: 180px;
     }
