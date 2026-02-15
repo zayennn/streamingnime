@@ -178,7 +178,6 @@ function initMobileMenu() {
     }
 }
 
-// Newsletter form submission
 function initNewsletter() {
     const newsletterForm = document.querySelector('.newsletter-form');
     
