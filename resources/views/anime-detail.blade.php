@@ -320,7 +320,6 @@
                 return div;
             }
 
-            // Render episodes
             function render(reset = true) {
                 const container = document.getElementById('episodesList');
                 const noEp = document.getElementById('noEpisodes');
