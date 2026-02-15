@@ -88,5 +88,4 @@ AddOutputFilterByType DEFLATE text/xml
     Deny from all
 </FilesMatch>
 
-# Prevent directory listing
 Options -Indexes
