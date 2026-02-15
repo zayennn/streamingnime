@@ -82,7 +82,7 @@
                     <h3 class="link-title">Community</h3>
                     <ul class="link-list">
                         <li><a href="/">Forums</a></li>
-                        <li><a href="/blog">Blog</a></li>
+                        <li><a href="/">Blog</a></li>
                         <li><a href="/discord">Discord Server</a></li>
                         <li><a href="/recommendations">Recommendations</a></li>
                         <li><a href="/support">Support</a></li>
