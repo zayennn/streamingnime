@@ -202,10 +202,319 @@ function initNewsletter() {
     }
 }
 
+// ==================== SEARCH FUNCTIONALITY ====================
+const searchInput = document.getElementById('searchInput');
+const searchResults = document.getElementById('searchResults');
+const searchResultsContent = document.getElementById('searchResultsContent');
+const clearSearch = document.getElementById('clearSearch');
+const closeResults = document.getElementById('closeResults');
+const mobileSearchToggle = document.getElementById('mobileSearchToggle');
+const mobileSearchOverlay = document.getElementById('mobileSearchOverlay');
+const closeMobileSearch = document.getElementById('closeMobileSearch');
+const mobileSearchInput = document.getElementById('mobileSearchInput');
+const mobileSearchResults = document.getElementById('mobileSearchResults');
+
+let searchTimeout;
+let currentSearchTerm = '';
+
+// Fetch search results from server
+async function fetchSearchResults(query) {
+    if (!query.trim() || query.length < 2) {
+        return [];
+    }
+
+    try {
+        const response = await fetch(`/api/search-anime?q=${encodeURIComponent(query)}`);
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Search error:', error);
+        return [];
+    }
+}
+
+// Render desktop search results
+function renderSearchResults(results, container) {
+    if (!container) return;
+
+    if (!results || results.length === 0) {
+        container.innerHTML = `
+            <div class="search-no-results">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <p>No results found for "${currentSearchTerm}"</p>
+            </div>
+        `;
+        return;
+    }
+
+    let html = '';
+    results.slice(0, 5).forEach(anime => {
+        html += `
+            <a href="/anime/${anime.id}" class="search-result-item">
+                <div class="result-image">
+                    <img src="${anime.image}" alt="${anime.title}" loading="lazy">
+                </div>
+                <div class="result-info">
+                    <h4 class="result-title">${anime.title}</h4>
+                    <div class="result-meta">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                            ${anime.year}
+                        </span>
+                        <span>${anime.type}</span>
+                        <span class="result-rating">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="#ffd700" stroke="#ffd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                            </svg>
+                            ${anime.rating}
+                        </span>
+                    </div>
+                </div>
+            </a>
+        `;
+    });
+
+    container.innerHTML = html;
+}
+
+// Render mobile search results
+function renderMobileSearchResults(results) {
+    if (!mobileSearchResults) return;
+
+    if (!results || results.length === 0) {
+        mobileSearchResults.innerHTML = `
+            <div class="search-no-results">
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <p>No results found for "${currentSearchTerm}"</p>
+            </div>
+        `;
+        return;
+    }
+
+    let html = '';
+    results.forEach(anime => {
+        html += `
+            <a href="/anime/${anime.id}" class="mobile-result-item">
+                <div class="mobile-result-image">
+                    <img src="${anime.image}" alt="${anime.title}" loading="lazy">
+                </div>
+                <div class="mobile-result-info">
+                    <h4 class="mobile-result-title">${anime.title}</h4>
+                    <div class="mobile-result-meta">
+                        <span>${anime.year}</span>
+                        <span>${anime.type}</span>
+                        <span class="mobile-result-rating">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="#ffd700" stroke="#ffd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                            </svg>
+                            ${anime.rating}
+                        </span>
+                    </div>
+                </div>
+            </a>
+        `;
+    });
+
+    mobileSearchResults.innerHTML = html;
+}
+
+// Handle desktop search
+if (searchInput) {
+    searchInput.addEventListener('input', function(e) {
+        const query = e.target.value.trim();
+        currentSearchTerm = query;
+
+        // Show/hide clear button
+        if (query.length > 0) {
+            clearSearch.style.display = 'flex';
+        } else {
+            clearSearch.style.display = 'none';
+            searchResults.classList.remove('active');
+            return;
+        }
+
+        // Only search if query is at least 2 characters
+        if (query.length < 2) {
+            searchResultsContent.innerHTML = `
+                <div class="search-no-results">
+                    <p>Type at least 2 characters to search</p>
+                </div>
+            `;
+            searchResults.classList.add('active');
+            return;
+        }
+
+        // Show loading state
+        searchResultsContent.innerHTML = `
+            <div class="search-loading">
+                <div class="spinner-small"></div>
+                <p>Searching...</p>
+            </div>
+        `;
+        searchResults.classList.add('active');
+
+        // Debounce search
+        clearTimeout(searchTimeout);
+        searchTimeout = setTimeout(async () => {
+            const results = await fetchSearchResults(query);
+            renderSearchResults(results, searchResultsContent);
+        }, 300);
+    });
+
+    // Handle clear button
+    clearSearch.addEventListener('click', function() {
+        searchInput.value = '';
+        searchInput.focus();
+        clearSearch.style.display = 'none';
+        searchResults.classList.remove('active');
+    });
+
+    // Handle close results
+    if (closeResults) {
+        closeResults.addEventListener('click', function() {
+            searchResults.classList.remove('active');
+        });
+    }
+
+    // Close results when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
+            searchResults.classList.remove('active');
+        }
+    });
+
+    // Handle form submit
+    const searchForm = document.getElementById('searchForm');
+    if (searchForm) {
+        searchForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const query = searchInput.value.trim();
+            if (query) {
+                window.location.href = `/anime-list?search=${encodeURIComponent(query)}`;
+            }
+        });
+    }
+}
+
+// Handle mobile search toggle
+if (mobileSearchToggle) {
+    mobileSearchToggle.addEventListener('click', function() {
+        mobileSearchOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        setTimeout(() => {
+            if (mobileSearchInput) {
+                mobileSearchInput.focus();
+            }
+        }, 300);
+    });
+}
+
+// Handle close mobile search
+if (closeMobileSearch) {
+    closeMobileSearch.addEventListener('click', function() {
+        mobileSearchOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+        if (mobileSearchInput) {
+            mobileSearchInput.value = '';
+        }
+        if (mobileSearchResults) {
+            mobileSearchResults.innerHTML = '';
+        }
+    });
+}
+
+// Handle mobile search input
+if (mobileSearchInput) {
+    mobileSearchInput.addEventListener('input', function(e) {
+        const query = e.target.value.trim();
+        currentSearchTerm = query;
+
+        if (!query) {
+            mobileSearchResults.innerHTML = '';
+            return;
+        }
+
+        if (query.length < 2) {
+            mobileSearchResults.innerHTML = `
+                <div class="search-no-results">
+                    <p>Type at least 2 characters to search</p>
+                </div>
+            `;
+            return;
+        }
+
+        // Show loading
+        mobileSearchResults.innerHTML = `
+            <div class="search-loading">
+                <div class="spinner-small"></div>
+                <p>Searching...</p>
+            </div>
+        `;
+
+        // Debounce search
+        clearTimeout(searchTimeout);
+        searchTimeout = setTimeout(async () => {
+            const results = await fetchSearchResults(query);
+            renderMobileSearchResults(results);
+        }, 300);
+    });
+
+    // Handle enter key
+    mobileSearchInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            const query = this.value.trim();
+            if (query) {
+                window.location.href = `/anime-list?search=${encodeURIComponent(query)}`;
+            }
+        }
+    });
+}
+
+// Close mobile search with escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && mobileSearchOverlay && mobileSearchOverlay.classList.contains('active')) {
+        mobileSearchOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+        if (mobileSearchInput) {
+            mobileSearchInput.value = '';
+        }
+        if (mobileSearchResults) {
+            mobileSearchResults.innerHTML = '';
+        }
+    }
+});
+
+// ==================== END SEARCH FUNCTIONALITY ====================
+
 document.addEventListener('DOMContentLoaded', function() {
     initMobileMenu();
     initBackToTop();
     initNewsletter();
+    
+    // Check for search parameter in URL for anime-list page
+    const urlParams = new URLSearchParams(window.location.search);
+    const searchParam = urlParams.get('search');
+    
+    if (searchParam && window.location.pathname.includes('/anime-list')) {
+        const animeSearchInput = document.getElementById('animeSearch');
+        if (animeSearchInput) {
+            animeSearchInput.value = searchParam;
+            // Trigger search if AnimeList exists
+            if (window.AnimeList) {
+                window.AnimeList.setSearchFromUrl(searchParam);
+            }
+        }
+    }
     
     document.querySelectorAll('.anime-card').forEach(card => {
         card.addEventListener('mouseenter', function() {

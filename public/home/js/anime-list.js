@@ -18,8 +18,32 @@ function initAnimeList(data, detailUrl) {
     animeData = data;
     animeDetailBaseUrl = detailUrl;
     initializeFilters();
+    
+    // Check for search parameter in URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const searchParam = urlParams.get('search');
+    
+    if (searchParam) {
+        currentState.search = searchParam.toLowerCase();
+        const searchInput = document.getElementById('animeSearch');
+        if (searchInput) {
+            searchInput.value = searchParam;
+        }
+    }
+    
     renderAnimeList();
     document.getElementById('loadingSpinner').style.display = 'none';
+}
+
+// New function to set search from URL (called from app.js)
+function setSearchFromUrl(searchTerm) {
+    currentState.search = searchTerm.toLowerCase();
+    const searchInput = document.getElementById('animeSearch');
+    if (searchInput) {
+        searchInput.value = searchTerm;
+    }
+    renderAnimeList();
+    updateActiveFilterText();
 }
 
 function initializeFilters() {
@@ -60,6 +84,15 @@ function initializeFilters() {
             currentState.search = this.value.trim().toLowerCase();
             currentState.currentPage = 1;
             renderAnimeList();
+            
+            // Update URL without reload
+            const url = new URL(window.location);
+            if (currentState.search) {
+                url.searchParams.set('search', currentState.search);
+            } else {
+                url.searchParams.delete('search');
+            }
+            window.history.replaceState({}, '', url);
         }, 300);
     });
 
@@ -68,6 +101,11 @@ function initializeFilters() {
         currentState.search = '';
         currentState.currentPage = 1;
         renderAnimeList();
+        
+        // Remove search from URL
+        const url = new URL(window.location);
+        url.searchParams.delete('search');
+        window.history.replaceState({}, '', url);
     });
 
     document.getElementById('genreFilter').addEventListener('change', function () {
@@ -140,6 +178,7 @@ function filterAnime() {
             if (currentState.filter === '#') {
                 const firstChar = anime.title.charAt(0);
                 if (!isNaN(firstChar) || ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '+', '=', '[', ']', '{', '}', '|', ';', ':', '"', ',', '.', '<', '>', '?', '/'].includes(firstChar)) {
+                    // Matches
                 } else {
                     return false;
                 }
@@ -418,6 +457,11 @@ function resetFilters() {
 
     document.getElementById('animeResults').className = 'anime-results grid-view';
 
+    // Remove search from URL
+    const url = new URL(window.location);
+    url.searchParams.delete('search');
+    window.history.replaceState({}, '', url);
+
     renderAnimeList();
     updateActiveFilterText();
 }
@@ -425,5 +469,6 @@ function resetFilters() {
 window.AnimeList = {
     init: initAnimeList,
     resetFilters: resetFilters,
-    renderAnimeList: renderAnimeList
+    renderAnimeList: renderAnimeList,
+    setSearchFromUrl: setSearchFromUrl // Expose new function
 };
