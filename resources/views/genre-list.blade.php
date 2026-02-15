@@ -174,7 +174,6 @@
             let currentView = 'grid';
             let currentSort = 'name';
 
-            // Filter genres by search
             function filterGenres() {
                 const searchTerm = searchInput.value.toLowerCase().trim();
                 let visibleCount = 0;
@@ -200,7 +199,6 @@
                 }
             }
 
-            // Sort genres
             function sortGenres() {
                 const cardsArray = Array.from(genreCards);
 
@@ -223,7 +221,6 @@
                     }
                 });
 
-                // Reorder DOM elements
                 cardsArray.forEach(card => {
                     genreResults.appendChild(card);
                 });
