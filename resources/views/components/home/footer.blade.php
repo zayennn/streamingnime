@@ -181,3 +181,39 @@
         </svg>
     </button>
 </footer>
+
+<script>
+    // Back to top button functionality - langsung di footer
+    document.addEventListener('DOMContentLoaded', function() {
+        const backToTopBtn = document.querySelector('.back-to-top');
+
+        if (backToTopBtn) {
+            // Initially hide the button
+            backToTopBtn.style.opacity = '0';
+            backToTopBtn.style.visibility = 'hidden';
+            backToTopBtn.style.transform = 'translateY(20px)';
+
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTopBtn.style.opacity = '1';
+                    backToTopBtn.style.visibility = 'visible';
+                    backToTopBtn.style.transform = 'translateY(0)';
+                    backToTopBtn.classList.add('visible');
+                } else {
+                    backToTopBtn.style.opacity = '0';
+                    backToTopBtn.style.visibility = 'hidden';
+                    backToTopBtn.style.transform = 'translateY(20px)';
+                    backToTopBtn.classList.remove('visible');
+                }
+            });
+
+            backToTopBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+    });
+</script>
