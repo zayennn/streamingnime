@@ -5,7 +5,7 @@
 
         <!-- Genre Hero -->
         <section class="genre-detail-hero">
-            <div class="hero-content">
+            <div class="hero-content-wrapper">
                 <h1 class="hero-title">{{ $genreName }}</h1>
                 <p class="hero-subtitle">Discover the best {{ $genreName }} anime series and movies</p>
 
