@@ -53,11 +53,11 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     {{-- Favicon / Icons --}}
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon/favicon-32x32.png') }}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon/favicon-16x16.png') }}">
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('favicon/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('images/favicon.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('images/favicon.png') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('images/favicon.png') }}">
     <link rel="manifest" href="{{ asset('site.webmanifest') }}">
-    <link rel="mask-icon" href="{{ asset('favicon/safari-pinned-tab.svg') }}" color="#ff006e">
+    <link rel="mask-icon" href="{{ asset('images/favicon.png') }}" color="#ff006e">
 
     {{-- Verification Meta Tags --}}
     <meta name="google-site-verification" content="YOUR_GOOGLE_VERIFICATION_CODE">
