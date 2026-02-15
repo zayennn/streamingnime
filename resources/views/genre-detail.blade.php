@@ -279,7 +279,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Episode item click
     document.querySelectorAll('.episode-item').forEach(ep => {
         ep.addEventListener('click', function(e) {
             e.preventDefault();
