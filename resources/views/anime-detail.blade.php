@@ -350,7 +350,6 @@
                     loadMoreContainer.style.display = 'block';
                 }
 
-                // Render new episodes
                 const episodesToRender = reset ? show : show.slice(loaded - perLoad);
                 episodesToRender.forEach(ep => {
                     container.appendChild(createEpisodeElement(ep));
