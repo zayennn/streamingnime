@@ -371,7 +371,6 @@
                 render(false);
             });
 
-            // Action buttons
             document.querySelectorAll('.watch-btn, .list-btn, .share-btn').forEach(btn => {
                 btn.addEventListener('click', function() {
                     if (this.classList.contains('watch-btn')) {
