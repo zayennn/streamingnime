@@ -383,7 +383,6 @@
                 });
             });
 
-            // Initial render
             render(true);
 
         });
