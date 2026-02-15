@@ -36,14 +36,14 @@
                         <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                     </svg>
                     <input type="text" class="search-input" id="genreSearch" placeholder="Search genres...">
-                    {{-- <button class="search-clear" id="clearSearch">
+                    <button class="search-clear" id="clearSearch">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
                             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                             stroke-linejoin="round">
                             <line x1="18" y1="6" x2="6" y2="18"></line>
                             <line x1="6" y1="6" x2="18" y2="18"></line>
                         </svg>
-                    </button> --}}
+                    </button>
                 </div>
                 <div class="view-options">
                     <span class="view-label">View:</span>
@@ -151,6 +151,8 @@
 @section('scripts')
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            console.log('Genre list script loaded'); // Debug
+            
             const genreCards = document.querySelectorAll('.genre-card-wrapper');
             const searchInput = document.getElementById('genreSearch');
             const clearButton = document.getElementById('clearSearch');
@@ -159,10 +161,20 @@
             const genreCountSpan = document.getElementById('genreCount');
             const sortSelect = document.getElementById('sortGenres');
             const viewBtns = document.querySelectorAll('.view-btn');
+            const resetSearchBtn = document.getElementById('resetSearch');
+
+            console.log('Elements found:', {
+                genreCards: genreCards.length,
+                searchInput: !!searchInput,
+                clearButton: !!clearButton,
+                sortSelect: !!sortSelect,
+                viewBtns: viewBtns.length
+            });
 
             let currentView = 'grid';
             let currentSort = 'name';
 
+            // Filter genres by search
             function filterGenres() {
                 const searchTerm = searchInput.value.toLowerCase().trim();
                 let visibleCount = 0;
@@ -188,6 +200,7 @@
                 }
             }
 
+            // Sort genres
             function sortGenres() {
                 const cardsArray = Array.from(genreCards);
 
@@ -203,7 +216,6 @@
                         case 'name-desc':
                             return nameB.localeCompare(nameA);
                         case 'popular':
-                            return countB - countA;
                         case 'count':
                             return countB - countA;
                         default:
@@ -211,11 +223,16 @@
                     }
                 });
 
+                // Reorder DOM elements
                 cardsArray.forEach(card => {
                     genreResults.appendChild(card);
                 });
+                
+                // Re-apply search filter after sorting
+                filterGenres();
             }
 
+            // Toggle view (grid/list)
             function toggleView(view) {
                 currentView = view;
                 genreResults.className = `genre-results ${view}-view`;
@@ -229,28 +246,47 @@
                 });
             }
 
-            searchInput.addEventListener('input', filterGenres);
+            // Event Listeners
+            if (searchInput) {
+                searchInput.addEventListener('input', filterGenres);
+            }
 
-            clearButton.addEventListener('click', function() {
-                searchInput.value = '';
-                filterGenres();
-            });
-
-            sortSelect.addEventListener('change', function() {
-                currentSort = this.value;
-                sortGenres();
-            });
-
-            viewBtns.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    toggleView(this.dataset.view);
+            if (clearButton) {
+                clearButton.addEventListener('click', function() {
+                    searchInput.value = '';
+                    filterGenres();
                 });
-            });
+            }
 
-            document.getElementById('resetSearch').addEventListener('click', function() {
-                searchInput.value = '';
-                filterGenres();
-            });
+            if (sortSelect) {
+                sortSelect.addEventListener('change', function() {
+                    currentSort = this.value;
+                    sortGenres();
+                });
+            }
+
+            if (viewBtns.length > 0) {
+                viewBtns.forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        toggleView(this.dataset.view);
+                    });
+                });
+            }
+
+            if (resetSearchBtn) {
+                resetSearchBtn.addEventListener('click', function() {
+                    if (searchInput) {
+                        searchInput.value = '';
+                    }
+                    if (clearButton) {
+                        clearButton.click();
+                    }
+                    filterGenres();
+                });
+            }
+
+            // Initial sort to ensure order
+            sortGenres();
         });
     </script>
 @endsection
