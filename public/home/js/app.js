@@ -235,7 +235,6 @@ window.addEventListener('load', function() {
     initBackToTop(); // Re-run to ensure button is properly initialized
 });
 
-// Make functions globally available if needed
 window.Common = {
     debounce: debounce,
     scrollToTop: scrollToTop,
