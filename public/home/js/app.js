@@ -158,7 +158,6 @@ function initMobileMenu() {
             }
         });
 
-        // Close menu when clicking on overlay
         navOverlay.addEventListener('click', function() {
             hamburger.checked = false;
             navMenu.classList.remove('active');
