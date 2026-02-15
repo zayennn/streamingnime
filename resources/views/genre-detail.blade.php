@@ -239,7 +239,6 @@ function copyToClipboard() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Watch Now button
     const watchBtn = document.querySelector('.watch-now');
     if (watchBtn) {
         watchBtn.addEventListener('click', function() {
