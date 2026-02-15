@@ -9,7 +9,6 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)/$ /$1 [R=301,L]
 
-# Custom error pages
 ErrorDocument 404 /404.html
 ErrorDocument 403 /403.html
 ErrorDocument 500 /500.html
