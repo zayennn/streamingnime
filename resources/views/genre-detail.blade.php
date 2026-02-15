@@ -254,7 +254,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Add to List button
     const addToListBtn = document.querySelector('.add-to-list');
     if (addToListBtn) {
         addToListBtn.addEventListener('click', function() {
