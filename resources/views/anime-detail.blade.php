@@ -344,7 +344,6 @@
                 container.style.display = 'block';
                 noEp.style.display = 'none';
 
-                // Show/hide load more button
                 if (loaded >= data.length) {
                     loadMoreContainer.style.display = 'none';
                 } else {
