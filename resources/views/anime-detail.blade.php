@@ -267,7 +267,6 @@
                 aired: "{{ $anime['aired'] ?? '2024' }}"
             }));
 
-            // Filter episodes by search
             function filterEpisodes(list) {
                 if (!search) return list;
                 return list.filter(e =>
