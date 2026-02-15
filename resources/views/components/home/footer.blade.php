@@ -183,7 +183,6 @@
 </footer>
 
 <script>
-    // Back to top button functionality - langsung di footer
     document.addEventListener('DOMContentLoaded', function() {
         const backToTopBtn = document.querySelector('.back-to-top');
 
