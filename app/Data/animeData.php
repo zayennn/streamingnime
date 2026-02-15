@@ -1,30 +1,6 @@
 <?php
 
 return [
-    // ID: 1 - Anime starting with numbers/symbols
-    [
-        'id' => 1,
-        'title' => '86 Eighty-Six',
-        'letter' => '#',
-        'year' => 2021,
-        'rating' => 8.3,
-        'episodes' => '23',
-        'episode' => 'S2 E11',
-        'type' => 'TV',
-        'status' => 'completed',
-        'genres' => ['Action', 'Drama', 'Sci-Fi'],
-        'image' => 'images/anime/86 Eighty-Six.jpg',
-        'badge' => null,
-        'airing' => null,
-        'time' => null,
-        'score' => 8.3,
-        'rank' => null,
-        'description' => 'The Republic of San Magnolia has been at war with the neighboring Empire for years. To conceal the mounting casualties, the government creates a propaganda campaign, claiming that the autonomous drones are the only ones falling in battle. In reality, the drones are piloted by the Eighty-Six, humans treated as less than human who are forced to fight in non-human drones.',
-        'studio' => 'A-1 Pictures',
-        'duration' => '24 min per episode',
-        'aired' => 'Apr 2021 to Mar 2022',
-    ],
-
     // ID: 2
     [
         'id' => 2,
