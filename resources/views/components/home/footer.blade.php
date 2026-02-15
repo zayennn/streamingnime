@@ -60,10 +60,7 @@
                     <h3 class="link-title">Browse</h3>
                     <ul class="link-list">
                         <li><a href="/">Home</a></li>
-                        <li><a href="/anime">Anime List</a></li>
-                        <li><a href="/movies">Movies</a></li>
-                        <li><a href="/new-season">New Season</a></li>
-                        <li><a href="/popular">Popular</a></li>
+                        <li><a href="/anime-list">Anime List</a></li>
                     </ul>
                 </div>
 
