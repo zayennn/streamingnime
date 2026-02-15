@@ -230,9 +230,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Also initialize on window load for any elements that might load late
 window.addEventListener('load', function() {
-    initBackToTop(); // Re-run to ensure button is properly initialized
+    initBackToTop();
 });
 
 window.Common = {
