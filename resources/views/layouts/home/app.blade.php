@@ -118,7 +118,11 @@
             "https://twitter.com/streamingnime",
             "https://www.instagram.com/streamingnime",
             "https://www.youtube.com/streamingnime",
-            "https://discord.gg/streamingnime"
+            "https://discord.gg/streamingnime",
+            "https://www.tiktok.com/@streamingnime",
+            "https://wa.me/6281234567890",
+            "https://t.me/streamingnime",
+            "https://www.linkedin.com/company/streamingnime"
         ]
     }
     </script>
