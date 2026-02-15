@@ -1,0 +1,101 @@
+{
+    "name": "StreamingNime",
+    "short_name": "StreamingNime",
+    "description": "Nonton Anime Subtitle Indonesia - Streaming Anime Online",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#02000c",
+    "theme_color": "#ff006e",
+    "orientation": "portrait",
+    "scope": "/",
+    "icons": [
+        {
+            "src": "/favicon/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/favicon/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/favicon/apple-touch-icon.png",
+            "sizes": "180x180",
+            "type": "image/png"
+        },
+        {
+            "src": "/favicon/favicon-32x32.png",
+            "sizes": "32x32",
+            "type": "image/png"
+        },
+        {
+            "src": "/favicon/favicon-16x16.png",
+            "sizes": "16x16",
+            "type": "image/png"
+        }
+    ],
+    "categories": [
+        "entertainment",
+        "anime",
+        "streaming"
+    ],
+    "screenshots": [
+        {
+            "src": "/images/screenshots/home.jpg",
+            "sizes": "1280x720",
+            "type": "image/jpeg",
+            "platform": "wide",
+            "label": "Halaman Utama StreamingNime"
+        },
+        {
+            "src": "/images/screenshots/anime-list.jpg",
+            "sizes": "1280x720",
+            "type": "image/jpeg",
+            "platform": "wide",
+            "label": "Daftar Anime StreamingNime"
+        }
+    ],
+    "shortcuts": [
+        {
+            "name": "Trending Anime",
+            "short_name": "Trending",
+            "description": "Lihat anime trending saat ini",
+            "url": "/trending",
+            "icons": [
+                {
+                    "src": "/favicon/trending.png",
+                    "sizes": "96x96"
+                }
+            ]
+        },
+        {
+            "name": "Ongoing Anime",
+            "short_name": "Ongoing",
+            "description": "Anime yang sedang tayang",
+            "url": "/ongoing",
+            "icons": [
+                {
+                    "src": "/favicon/ongoing.png",
+                    "sizes": "96x96"
+                }
+            ]
+        },
+        {
+            "name": "Anime List",
+            "short_name": "List",
+            "description": "Daftar semua anime",
+            "url": "/anime-list",
+            "icons": [
+                {
+                    "src": "/favicon/list.png",
+                    "sizes": "96x96"
+                }
+            ]
+        }
+    ],
+    "lang": "id-ID",
+    "dir": "ltr"
+}
