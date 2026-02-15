@@ -127,7 +127,7 @@
                         <div class="episodes-grid">
                             @php
                                 $totalEpisodes = is_numeric($anime['episodes']) ? (int) $anime['episodes'] : 12;
-                                $episodeCount = min($totalEpisodes, 24); // Show max 24 episodes initially
+                                $episodeCount = min($totalEpisodes, 24);
                             @endphp
 
                             @for ($i = 1; $i <= $episodeCount; $i++)
