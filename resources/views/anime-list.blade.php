@@ -202,7 +202,6 @@
         document.addEventListener('DOMContentLoaded', function() {
             const animeData = @json($animeData);
 
-            // template route dari laravel
             const animeDetailBaseUrl = "{{ route('anime.detail', '__ID__') }}";
 
             window.AnimeList.init(animeData, animeDetailBaseUrl);
