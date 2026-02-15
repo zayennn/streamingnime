@@ -356,7 +356,6 @@
                 });
             }
 
-            // Event listeners
             document.getElementById('episodeSearch').addEventListener('input', (e) => {
                 search = e.target.value;
                 render(true);
