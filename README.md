@@ -1,6 +1,8 @@
 # StreamingNime - Anime Streaming Website
 
-![StreamingNime Banner](https://via.placeholder.com/1200x400/ff006e/ffffff?text=StreamingNime)
+<p align="center">
+  <img src="public/images/og-image.jpg" alt="StreamingNime Banner" width="100%">
+</p>
 
 StreamingNime is a fully responsive anime streaming website built using Laravel as a structural framework, featuring a modern glass morphism UI, anime listings, genre filtering, and detailed anime pages.
 
