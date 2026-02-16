@@ -1,66 +1,249 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# StreamingNime - Anime Streaming Website
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+![StreamingNime Banner](https://via.placeholder.com/1200x400/ff006e/ffffff?text=StreamingNime)
 
-## About Laravel
+StreamingNime is a fully responsive anime streaming website built using Laravel as a structural framework, featuring a modern glass morphism UI, anime listings, genre filtering, and detailed anime pages.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+> ⚠️ This project is frontend-focused. Laravel is used only for routing, templating, and page structure.  
+> There is no database, authentication, or backend logic implemented.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+🌐 Live Website  
+https://streamingnime.great-site.net/
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+💻 Source Code  
+https://github.com/zayennn/streamingnime
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## ✨ Features
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### 🏠 Homepage
+- Hero slider with autoplay anime highlights
+- Trending anime section
+- Ongoing anime with airing schedule
+- Top rated anime collection
+- Popular genres quick navigation
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 📋 Anime List Page
+- Alphabet filter (A–Z, numbers, symbols)
+- Quick category filters (Trending, New, Top Rated, Ongoing)
+- Real-time search with debounce
+- Multi-filter system (genre, type, status)
+- Sorting options (title, rating, popularity, newest)
+- Grid / list view toggle
+- Pagination (24 items per page)
 
-## Laravel Sponsors
+### 🎭 Genre List Page
+- Gradient genre cards with anime previews
+- Genre statistics
+- Real-time genre search
+- Sorting by name, popularity, count
+- Top anime preview per genre
+- Responsive adaptive grid
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+### 📺 Anime Detail Page
+- Hero poster section with gradient overlay
+- Detailed anime information
+- Full synopsis
+- Searchable & sortable episode list
+- Progressive episode loading
+- Related anime recommendations
+- Action buttons (Watch, Share, Add to List UI)
 
-### Premium Partners
+### 🎨 UI / UX
+- Glass morphism interface
+- Dark theme design
+- Gradient accent styling
+- Smooth hover & transition animations
+- Custom themed scrollbar
+- Fully responsive layout
+- Loading states & skeleton UI
+- Friendly empty states
+- Parallax scrolling effects using Paroller.js
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+---
 
-## Contributing
+## 🛠️ Tech Stack
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Framework & Structure
+- Laravel 10 — routing, Blade templating, page structure (frontend usage only)
 
-## Code of Conduct
+### Frontend
+- HTML5
+- CSS3 (fully custom, no frameworks)
+- Vanilla JavaScript
+- Swiper.js (sliders & transitions)
+- Paroller.js (parallax scrolling effects)
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### CSS Techniques
+- CSS Grid & Flexbox
+- CSS Variables
+- CSS Animations & Keyframes
+- Responsive media queries
+- Backdrop filter (glass effect)
+- Custom scrollbar styling
+- Gradient text effects
 
-## Security Vulnerabilities
+---
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## 📁 Project Structure
 
-## License
+```
+streamingnime/
+├── app/
+│   ├── Http/
+│   │   └── Controllers/
+│   │       └── HomeController.php
+│   └── Data/
+│       └── animeData.php
+├── resources/
+│   ├── views/
+│   │   ├── layouts/
+│   │   │   └── home/
+│   │   │       └── app.blade.php
+│   │   ├── components/
+│   │   │   └── home/
+│   │   │       ├── navbar.blade.php
+│   │   │       └── footer.blade.php
+│   │   ├── welcome.blade.php
+│   │   ├── anime-list.blade.php
+│   │   ├── genre-list.blade.php
+│   │   ├── genre-detail.blade.php
+│   │   └── anime-detail.blade.php
+├── public/
+│   └── home/
+│       ├── css/
+│       │   ├── app.css
+│       │   ├── navbar.css
+│       │   ├── footer.css
+│       │   ├── styles.css
+│       │   ├── anime-list.css
+│       │   ├── genre-list.css
+│       │   └── anime-detail.css
+│       └── js/
+│           ├── app.js
+│           └── anime-list.js
+└── routes/
+    └── web.php
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+---
+
+## 🚀 Installation
+
+### Requirements
+- PHP ≥ 8.1
+- Composer
+
+### Steps
+
+Clone repository
+
+```
+git clone https://github.com/zayennn/streamingnime.git
+cd streamingnime
+```
+
+Install dependencies
+
+```
+composer install
+```
+
+Environment setup
+
+```
+cp .env.example .env
+php artisan key:generate
+```
+
+Run development server
+
+```
+php artisan serve
+```
+
+Open browser
+
+```
+http://localhost:8000
+```
+
+---
+
+## 📊 Data Structure
+
+All anime content is stored as static dummy data.
+
+Location:
+
+```
+app/Data/animeData.php
+```
+
+Example structure:
+
+```php
+[
+    'id' => 1,
+    'title' => 'Anime Title',
+    'letter' => 'A',
+    'year' => 2024,
+    'rating' => 8.5,
+    'episodes' => '24',
+    'episode' => 'S1 E12',
+    'type' => 'TV',
+    'status' => 'airing',
+    'genres' => ['Action', 'Adventure'],
+    'image' => 'images/anime/title.jpg',
+    'badge' => 'Hot',
+    'airing' => 'Airing Now',
+    'time' => 'Sundays',
+    'score' => 8.5,
+    'rank' => 1,
+    'description' => 'Anime description...',
+    'studio' => 'Studio Name',
+    'duration' => '24 min per episode',
+    'aired' => 'Jan 2024 to Mar 2024'
+]
+```
+
+---
+
+## 📱 Responsive Design
+
+Optimized for:
+
+- Mobile (320px+)
+- Tablet (577px+)
+- Laptop (769px+)
+- Desktop (993px+)
+- Large screens (1200px+)
+
+---
+
+## 🎨 Color Scheme
+
+Primary Colors
+- Pink: #ff006e
+- Purple: #8338ec
+- Blue: #3a86ff
+- Background: rgb(2, 0, 12)
+
+Status Colors
+- Airing: #00ff88
+- Completed: #3a86ff
+- Upcoming: #ff006e
+
+Gradients
+- Primary: linear-gradient(90deg, #ff006e, #8338ec, #3a86ff)
+- Hot: linear-gradient(90deg, #ff006e, #ff8e53)
+- New: linear-gradient(90deg, #3a86ff, #4cc9f0)
+
+---
+
+## ⚠️ Disclaimer
+
+All anime titles, images, and metadata used in this project are dummy/sample data for development and UI demonstration only.
+
+No real streaming functionality is provided.
